@@ -1,7 +1,7 @@
 section,item_id,item_type,field,value,item_order,value_order,enabled
 site,identity,profile,full_name,VEERABABU SUTAPALLI,1,1,true
 site,identity,profile,primary_role,Machine Learning & GenAI Engineer,1,2,true
-site,identity,profile,tagline,"Building reliable AI systems from data and models to intelligent applications.",1,3,true
+site,identity,profile,tagline,Building reliable AI systems from data and models to intelligent applications.,1,3,true
 site,identity,profile,location,"Hyderabad, India · Open to India, Sweden and European opportunities",1,4,true
 site,identity,profile,email,mailto:isutapalliveerababu@gmail.com,1,5,true
 social,github,link,label,GitHub,1,1,true
@@ -48,8 +48,8 @@ hero,phase_1,phase,text,VEERA.,2,1,true
 hero,phase_2,phase,eyebrow,Machine Learning · GenAI · Data Engineering,3,1,true
 hero,phase_2,phase,text,VEERABABU SUTAPALLI,3,2,true
 hero,phase_2,phase,supporting,Machine Learning & GenAI Engineer,3,3,true
-hero,phase_3,phase,text,"I build reliable AI systems—from data and models to intelligent applications.",4,1,true
-hero,phase_4,phase,text,"Machine Learning · LLM Applications · RAG · NLP · Data Systems",5,1,true
+hero,phase_3,phase,text,I build reliable AI systems—from data and models to intelligent applications.,4,1,true
+hero,phase_4,phase,text,Machine Learning · LLM Applications · RAG · NLP · Data Systems,5,1,true
 
 hero_cta,projects,button,label,Explore Selected Work,1,1,true
 hero_cta,projects,button,target,#work,1,2,true
@@ -92,62 +92,62 @@ capability,data_engineering_analytics,capability,description,"ETL workflows, SQL
 capability,ai_product_engineering,capability,title,AI-Enabled Product Engineering,6,1,true
 capability,ai_product_engineering,capability,description,"APIs, web applications, authentication, databases, testing and deployment for complete AI-enabled products.",6,2,true
 
-project,life_insurance_risk_prediction,featured,title,Predicting Risk Level in Life Insurance Application,1,1,true
-project,life_insurance_risk_prediction,featured,slug,life-insurance-risk-prediction,1,2,true
-project,life_insurance_risk_prediction,featured,category,Machine Learning · Risk Analytics · Research,1,3,true
-project,life_insurance_risk_prediction,featured,summary,A machine-learning research project comparing classification approaches for predicting life-insurance applicant risk levels across original and modified datasets.,1,4,true
-project,life_insurance_risk_prediction,featured,short_description,Multi-class insurance-risk prediction using applicant features and comparative model evaluation.,1,5,true
-project,life_insurance_risk_prediction,featured,status,Bachelor’s Thesis Research,1,6,true
-project,life_insurance_risk_prediction,featured,role,Machine Learning Researcher,1,7,true
-project,life_insurance_risk_prediction,featured,dataset,"Life-insurance applicant dataset containing 59,629 records and 127 features.",1,8,true
-project,life_insurance_risk_prediction,featured,data_scale,"59,629 records · 127 features",1,9,true
-project,life_insurance_risk_prediction,featured,methodology,"Data preprocessing, feature modification, classifier comparison and evaluation using accuracy, precision, recall and F1-score.",1,1,true
-project,life_insurance_risk_prediction,featured,metric,"59,629 records",1,1,true
-project,life_insurance_risk_prediction,featured,metric,127 features,1,2,true
-project,life_insurance_risk_prediction,featured,result,Random Forest achieved 53.79% accuracy on the original dataset.,1,1,true
-project,life_insurance_risk_prediction,featured,result,Random Forest achieved 52.80% accuracy on the modified dataset.,1,2,true
-project,life_insurance_risk_prediction,featured,technology,Python,1,1,true
-project,life_insurance_risk_prediction,featured,technology,pandas,1,2,true
-project,life_insurance_risk_prediction,featured,technology,NumPy,1,3,true
-project,life_insurance_risk_prediction,featured,technology,scikit-learn,1,4,true
-project,life_insurance_risk_prediction,featured,technology,Matplotlib,1,5,true
-project,life_insurance_risk_prediction,featured,technology,Seaborn,1,6,true
-project,life_insurance_risk_prediction,featured,technology,Logistic Regression,1,7,true
-project,life_insurance_risk_prediction,featured,technology,Decision Tree,1,8,true
-project,life_insurance_risk_prediction,featured,technology,Random Forest,1,9,true
-project,life_insurance_risk_prediction,featured,technology,Linear SVC,1,10,true
-project,life_insurance_risk_prediction,featured,publication_url,https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1784294,1,1,true
+project,life_insurance_risk_prediction,featured,title,Predicting Risk Level in Life Insurance Application,3,1,true
+project,life_insurance_risk_prediction,featured,slug,life-insurance-risk-prediction,3,2,true
+project,life_insurance_risk_prediction,featured,category,Machine Learning · Risk Analytics · Research,3,3,true
+project,life_insurance_risk_prediction,featured,summary,A machine-learning research project comparing classification approaches for predicting life-insurance applicant risk levels across original and modified datasets.,3,4,true
+project,life_insurance_risk_prediction,featured,short_description,Multi-class insurance-risk prediction using applicant features and comparative model evaluation.,3,5,true
+project,life_insurance_risk_prediction,featured,status,Bachelor’s Thesis Research,3,6,true
+project,life_insurance_risk_prediction,featured,role,Machine Learning Researcher,3,7,true
+project,life_insurance_risk_prediction,featured,dataset,"Life-insurance applicant dataset containing 59,629 records and 127 features.",3,8,true
+project,life_insurance_risk_prediction,featured,data_scale,"59,629 records · 127 features",3,9,true
+project,life_insurance_risk_prediction,featured,methodology,"Data preprocessing, feature modification, classifier comparison and evaluation using accuracy, precision, recall and F1-score.",3,1,true
+project,life_insurance_risk_prediction,featured,metric,"59,629 records",3,1,true
+project,life_insurance_risk_prediction,featured,metric,127 features,3,2,true
+project,life_insurance_risk_prediction,featured,result,Random Forest achieved 53.79% accuracy on the original dataset.,3,1,true
+project,life_insurance_risk_prediction,featured,result,Random Forest achieved 52.80% accuracy on the modified dataset.,3,2,true
+project,life_insurance_risk_prediction,featured,technology,Python,3,1,true
+project,life_insurance_risk_prediction,featured,technology,pandas,3,2,true
+project,life_insurance_risk_prediction,featured,technology,NumPy,3,3,true
+project,life_insurance_risk_prediction,featured,technology,scikit-learn,3,4,true
+project,life_insurance_risk_prediction,featured,technology,Matplotlib,3,5,true
+project,life_insurance_risk_prediction,featured,technology,Seaborn,3,6,true
+project,life_insurance_risk_prediction,featured,technology,Logistic Regression,3,7,true
+project,life_insurance_risk_prediction,featured,technology,Decision Tree,3,8,true
+project,life_insurance_risk_prediction,featured,technology,Random Forest,3,9,true
+project,life_insurance_risk_prediction,featured,technology,Linear SVC,3,10,true
+project,life_insurance_risk_prediction,featured,publication_url,https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1784294,3,1,true
 
-project,distributed_llm_inference_petals,featured,title,Scaling Distributed Inference of BLOOMZ-560M using Petals,2,1,true
-project,distributed_llm_inference_petals,featured,slug,distributed-llm-inference-bloomz-petals,2,2,true
-project,distributed_llm_inference_petals,featured,category,LLM Systems · Distributed Inference · Research,2,3,true
-project,distributed_llm_inference_petals,featured,summary,"Research into collaborative transformer inference using BLOOMZ-560M and Petals, with a focus on distributed execution, scalability and performance behaviour.",2,4,true
-project,distributed_llm_inference_petals,featured,short_description,Distributed language-model inference across collaborative compute resources.,2,5,true
-project,distributed_llm_inference_petals,featured,status,Research Publication,2,6,true
-project,distributed_llm_inference_petals,featured,role,Researcher,2,7,true
-project,distributed_llm_inference_petals,featured,problem,"Large language models require substantial computational and memory resources, limiting access to centralized high-end infrastructure.",2,8,true
-project,distributed_llm_inference_petals,featured,motivation,Evaluate how collaborative distributed inference can make transformer execution more accessible while exposing performance trade-offs.,2,9,true
-project,distributed_llm_inference_petals,featured,methodology,Configured and evaluated BLOOMZ-560M inference through the Petals ecosystem and analysed distributed execution behaviour.,2,1,true
-project,distributed_llm_inference_petals,featured,technology,Python,2,1,true
-project,distributed_llm_inference_petals,featured,technology,Hugging Face Transformers,2,2,true
-project,distributed_llm_inference_petals,featured,technology,Petals,2,3,true
-project,distributed_llm_inference_petals,featured,technology,BLOOMZ-560M,2,4,true
+project,distributed_llm_inference_petals,featured,title,Scaling Distributed Inference of BLOOMZ-560M using Petals,1,1,true
+project,distributed_llm_inference_petals,featured,slug,distributed-llm-inference-bloomz-petals,1,2,true
+project,distributed_llm_inference_petals,featured,category,LLM Systems · Distributed Inference · Research,1,3,true
+project,distributed_llm_inference_petals,featured,summary,"Research into collaborative transformer inference using BLOOMZ-560M and Petals, with a focus on distributed execution, scalability and performance behaviour.",1,4,true
+project,distributed_llm_inference_petals,featured,short_description,Distributed language-model inference across collaborative compute resources.,1,5,true
+project,distributed_llm_inference_petals,featured,status,Research Publication,1,6,true
+project,distributed_llm_inference_petals,featured,role,Researcher,1,7,true
+project,distributed_llm_inference_petals,featured,problem,"Large language models require substantial computational and memory resources, limiting access to centralized high-end infrastructure.",1,8,true
+project,distributed_llm_inference_petals,featured,motivation,Evaluate how collaborative distributed inference can make transformer execution more accessible while exposing performance trade-offs.,1,9,true
+project,distributed_llm_inference_petals,featured,methodology,Configured and evaluated BLOOMZ-560M inference through the Petals ecosystem and analysed distributed execution behaviour.,1,1,true
+project,distributed_llm_inference_petals,featured,technology,Python,1,1,true
+project,distributed_llm_inference_petals,featured,technology,Hugging Face Transformers,1,2,true
+project,distributed_llm_inference_petals,featured,technology,Petals,1,3,true
+project,distributed_llm_inference_petals,featured,technology,BLOOMZ-560M,1,4,true
 
-project,ai_generated_review_detection,featured,title,AI-Generated Review Detection,3,1,true
-project,ai_generated_review_detection,featured,slug,ai-generated-review-detection,3,2,true
-project,ai_generated_review_detection,featured,category,NLP · Machine Learning,3,3,true
-project,ai_generated_review_detection,featured,summary,An NLP and machine-learning pipeline designed to distinguish AI-generated reviews from human-written reviews through comparative modelling and evaluation.,3,4,true
-project,ai_generated_review_detection,featured,short_description,Detecting synthetic review content using natural-language features and machine-learning models.,3,5,true
-project,ai_generated_review_detection,featured,status,Portfolio Project,3,6,true
-project,ai_generated_review_detection,featured,role,Machine Learning Engineer,3,7,true
-project,ai_generated_review_detection,featured,problem,AI-generated reviews can reduce trust in online platforms and distort customer decision-making.,3,8,true
-project,ai_generated_review_detection,featured,methodology,"Prepared and analysed review text, engineered NLP representations, compared classification models and evaluated prediction errors.",3,1,true
-project,ai_generated_review_detection,featured,technology,Python,3,1,true
-project,ai_generated_review_detection,featured,technology,pandas,3,2,true
-project,ai_generated_review_detection,featured,technology,scikit-learn,3,3,true
-project,ai_generated_review_detection,featured,technology,Natural Language Processing,3,4,true
-project,ai_generated_review_detection,featured,technology,Text Classification,3,5,true
-project,ai_generated_review_detection,featured,github_url,https://github.com/veera491/ai-generated-review-detection,3,1,true
+project,ai_generated_review_detection,featured,title,AI-Generated Review Detection,2,1,true
+project,ai_generated_review_detection,featured,slug,ai-generated-review-detection,2,2,true
+project,ai_generated_review_detection,featured,category,NLP · Machine Learning,2,3,true
+project,ai_generated_review_detection,featured,summary,An NLP and machine-learning pipeline designed to distinguish AI-generated reviews from human-written reviews through comparative modelling and evaluation.,2,4,true
+project,ai_generated_review_detection,featured,short_description,Detecting synthetic review content using natural-language features and machine-learning models.,2,5,true
+project,ai_generated_review_detection,featured,status,Portfolio Project,2,6,true
+project,ai_generated_review_detection,featured,role,Machine Learning Engineer,2,7,true
+project,ai_generated_review_detection,featured,problem,AI-generated reviews can reduce trust in online platforms and distort customer decision-making.,2,8,true
+project,ai_generated_review_detection,featured,methodology,"Prepared and analysed review text, engineered NLP representations, compared classification models and evaluated prediction errors.",2,1,true
+project,ai_generated_review_detection,featured,technology,Python,2,1,true
+project,ai_generated_review_detection,featured,technology,pandas,2,2,true
+project,ai_generated_review_detection,featured,technology,scikit-learn,2,3,true
+project,ai_generated_review_detection,featured,technology,Natural Language Processing,2,4,true
+project,ai_generated_review_detection,featured,technology,Text Classification,2,5,true
+project,ai_generated_review_detection,featured,github_url,https://github.com/veera491/ai-generated-review-detection,2,1,true
 
 project,port_efficiency_decision_support,standard,title,Decision Support System for Port Efficiency Analysis,4,1,true
 project,port_efficiency_decision_support,standard,slug,port-efficiency-decision-support-system,4,2,true
