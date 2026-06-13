@@ -1,0 +1,19 @@
+export const REPEATED_FIELDS = [
+  'paragraph',
+  'bullet',
+  'technology',
+  'metric',
+  'result',
+  'finding',
+  'limitation',
+  'future_improvement',
+  'responsibility',
+  'challenge',
+  'decision',
+  'image',
+  'diagram',
+  'author',
+  'link',
+  'skill',
+  'certification'
+];
