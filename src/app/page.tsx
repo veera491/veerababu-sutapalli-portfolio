@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main>
-      <div>Hello world!</div>
+      <div>VEERABABU SUTAPALLI — Portfolio Foundation</div>
     </main>
   );
 }
