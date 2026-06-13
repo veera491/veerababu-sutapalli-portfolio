@@ -7,7 +7,7 @@ site,identity,profile,email,mailto:isutapalliveerababu@gmail.com,1,5,true
 social,github,link,label,GitHub,1,1,true
 social,github,link,url,https://github.com/veera491,1,2,true
 social,linkedin,link,label,LinkedIn,2,1,true
-social,linkedin,link,url,REPLACE_WITH_LINKEDIN_URL,2,2,true
+social,linkedin,link,url,https://www.linkedin.com/in/veera-sutapalli/,2,2,true
 social,email,link,label,Email,3,1,true
 social,email,link,url,mailto:isutapalliveerababu@gmail.com,3,2,true
 proof,education,proof_item,value,MS Computer Science — BTH Sweden,1,1,true
@@ -53,3 +53,354 @@ hero_cta,projects,button,label,Explore Selected Work,1,1,true
 hero_cta,projects,button,target,#work,1,2,true
 hero_cta,resume,button,label,View Résumé,2,1,true
 hero_cta,resume,button,target,/assets/resume/VEERABABU_SUTAPALLI_Resume.pdf,2,2,true
+
+social,hackerrank,link,label,HackerRank,4,1,true
+social,hackerrank,link,url,https://www.hackerrank.com/profile/svb491,4,2,true
+
+site,identity,profile,github_url,https://github.com/veera491,1,6,true
+site,identity,profile,linkedin_url,https://www.linkedin.com/in/veera-sutapalli/,1,7,true
+site,identity,profile,resume_path,/assets/resume/VEERABABU_SUTAPALLI_Resume.pdf,1,8,true
+site,identity,profile,open_to_work,true,1,9,true
+
+about,main,content,heading,Engineering Intelligent Systems from Data to Production,1,1,true
+about,main,content,paragraph,I am a Machine Learning and GenAI engineer with experience across applied research, distributed data processing, forecasting, natural language processing and full-stack product engineering.,1,1,true
+about,main,content,paragraph,"My work focuses on connecting rigorous data preparation, leakage-safe experimentation, model evaluation and software engineering to build AI systems that are reliable, explainable and useful in real applications.",1,2,true
+about,main,content,paragraph,I hold a Master of Science in Computer Science from Blekinge Institute of Technology in Sweden and a Bachelor of Technology in Computer Science and Engineering from JNTU Kakinada.,1,3,true
+about,main,content,keyword,Machine Learning,1,1,true
+about,main,content,keyword,GenAI,1,2,true
+about,main,content,keyword,LLM Applications,1,3,true
+about,main,content,keyword,RAG,1,4,true
+about,main,content,keyword,NLP,1,5,true
+about,main,content,keyword,Data Engineering,1,6,true
+about,main,content,keyword,AI Product Engineering,1,7,true
+
+capability,machine_learning_systems,capability,title,Machine Learning Systems,1,1,true
+capability,machine_learning_systems,capability,description,"Problem framing, feature engineering, leakage-safe validation, model comparison, explainability and systematic error analysis.",1,2,true
+capability,genai_llm_applications,capability,title,GenAI & LLM Applications,2,1,true
+capability,genai_llm_applications,capability,description,"LLM application workflows, structured outputs, prompt engineering, tool integration and evaluation-aware product development.",2,2,true
+capability,rag_semantic_search,capability,title,RAG & Semantic Search,3,1,true
+capability,rag_semantic_search,capability,description,"Document ingestion, chunking, embeddings, vector retrieval, metadata filtering, reranking and grounded answer generation.",3,2,true
+capability,nlp_applied_ai,capability,title,NLP & Applied AI,4,1,true
+capability,nlp_applied_ai,capability,description,"Text classification, semantic representations, information extraction, content analysis and document intelligence.",4,2,true
+capability,data_engineering_analytics,capability,title,Data Engineering & Analytics,5,1,true
+capability,data_engineering_analytics,capability,description,"ETL workflows, SQL, PySpark, distributed processing, analytical pipelines and decision-support systems.",5,2,true
+capability,ai_product_engineering,capability,title,AI-Enabled Product Engineering,6,1,true
+capability,ai_product_engineering,capability,description,"APIs, web applications, authentication, databases, testing and deployment for complete AI-enabled products.",6,2,true
+
+project,pjm_electricity_demand_forecasting,featured,title,PJM Electricity Demand Forecasting,1,1,true
+project,pjm_electricity_demand_forecasting,featured,slug,pjm-electricity-demand-forecasting,1,2,true
+project,pjm_electricity_demand_forecasting,featured,category,Machine Learning · Time-Series Forecasting,1,3,true
+project,pjm_electricity_demand_forecasting,featured,summary,"A leakage-safe, multi-horizon electricity-demand forecasting system using rolling-origin evaluation, statistical baselines, machine-learning models and reproducible feature pipelines.",1,4,true
+project,pjm_electricity_demand_forecasting,featured,short_description,"Forecasting electricity demand across 30 PJM regions for 1-hour, 6-hour, 12-hour and 24-hour horizons.",1,5,true
+project,pjm_electricity_demand_forecasting,featured,status,Master’s Thesis Research,1,6,true
+project,pjm_electricity_demand_forecasting,featured,year,2026,1,7,true
+project,pjm_electricity_demand_forecasting,featured,role,Machine Learning Researcher,1,8,true
+project,pjm_electricity_demand_forecasting,featured,dataset,"A balanced hourly panel covering 30 PJM regions with demand, weather, calendar, holiday and macroeconomic information.",1,9,true
+project,pjm_electricity_demand_forecasting,featured,data_scale,"1,170,540 rows · 93 columns · 30 regions · 39,018 timestamps",1,10,true
+project,pjm_electricity_demand_forecasting,featured,responsibility,Designed the forecasting protocol and leakage-control policy.,1,1,true
+project,pjm_electricity_demand_forecasting,featured,responsibility,Built segment-aware lag and rolling features without crossing missing-data gaps.,1,2,true
+project,pjm_electricity_demand_forecasting,featured,responsibility,Implemented multi-horizon targets and rolling-origin evaluation.,1,3,true
+project,pjm_electricity_demand_forecasting,featured,responsibility,Compared statistical baselines and advanced forecasting model families.,1,4,true
+project,pjm_electricity_demand_forecasting,featured,challenge,Preventing target leakage and feature contamination across long missing-data gaps.,1,1,true
+project,pjm_electricity_demand_forecasting,featured,challenge,"Maintaining identical evaluation conditions across regions, horizons and model families.",1,2,true
+project,pjm_electricity_demand_forecasting,featured,methodology,"Canonical hourly panel construction, missingness diagnostics, demand-structure analysis, feature engineering, multi-horizon target creation and time-based evaluation.",1,1,true
+project,pjm_electricity_demand_forecasting,featured,metric,"1,170,540 engineered rows",1,1,true
+project,pjm_electricity_demand_forecasting,featured,metric,30 PJM regions,1,2,true
+project,pjm_electricity_demand_forecasting,featured,metric,4 forecasting horizons,1,3,true
+project,pjm_electricity_demand_forecasting,featured,technology,Python,1,1,true
+project,pjm_electricity_demand_forecasting,featured,technology,pandas,1,2,true
+project,pjm_electricity_demand_forecasting,featured,technology,PySpark,1,3,true
+project,pjm_electricity_demand_forecasting,featured,technology,scikit-learn,1,4,true
+project,pjm_electricity_demand_forecasting,featured,technology,PyTorch,1,5,true
+project,pjm_electricity_demand_forecasting,featured,technology,Parquet,1,6,true
+project,pjm_electricity_demand_forecasting,featured,technology,Google Colab,1,7,true
+
+project,distributed_llm_inference_petals,featured,title,Scaling Distributed Inference of BLOOMZ-560M using Petals,2,1,true
+project,distributed_llm_inference_petals,featured,slug,distributed-llm-inference-bloomz-petals,2,2,true
+project,distributed_llm_inference_petals,featured,category,LLM Systems · Distributed Inference · Research,2,3,true
+project,distributed_llm_inference_petals,featured,summary,"Research into collaborative transformer inference using BLOOMZ-560M and Petals, with a focus on distributed execution, scalability and performance behaviour.",2,4,true
+project,distributed_llm_inference_petals,featured,short_description,Distributed language-model inference across collaborative compute resources.,2,5,true
+project,distributed_llm_inference_petals,featured,status,Research Publication,2,6,true
+project,distributed_llm_inference_petals,featured,role,Researcher,2,7,true
+project,distributed_llm_inference_petals,featured,problem,"Large language models require substantial computational and memory resources, limiting access to centralized high-end infrastructure.",2,8,true
+project,distributed_llm_inference_petals,featured,motivation,Evaluate how collaborative distributed inference can make transformer execution more accessible while exposing performance trade-offs.,2,9,true
+project,distributed_llm_inference_petals,featured,methodology,Configured and evaluated BLOOMZ-560M inference through the Petals ecosystem and analysed distributed execution behaviour.,2,1,true
+project,distributed_llm_inference_petals,featured,technology,Python,2,1,true
+project,distributed_llm_inference_petals,featured,technology,Hugging Face Transformers,2,2,true
+project,distributed_llm_inference_petals,featured,technology,Petals,2,3,true
+project,distributed_llm_inference_petals,featured,technology,BLOOMZ-560M,2,4,true
+
+project,ai_generated_review_detection,featured,title,AI-Generated Review Detection,3,1,true
+project,ai_generated_review_detection,featured,slug,ai-generated-review-detection,3,2,true
+project,ai_generated_review_detection,featured,category,NLP · Machine Learning,3,3,true
+project,ai_generated_review_detection,featured,summary,An NLP and machine-learning pipeline designed to distinguish AI-generated reviews from human-written reviews through comparative modelling and evaluation.,3,4,true
+project,ai_generated_review_detection,featured,short_description,Detecting synthetic review content using natural-language features and machine-learning models.,3,5,true
+project,ai_generated_review_detection,featured,status,Portfolio Project,3,6,true
+project,ai_generated_review_detection,featured,role,Machine Learning Engineer,3,7,true
+project,ai_generated_review_detection,featured,problem,AI-generated reviews can reduce trust in online platforms and distort customer decision-making.,3,8,true
+project,ai_generated_review_detection,featured,methodology,"Prepared and analysed review text, engineered NLP representations, compared classification models and evaluated prediction errors.",3,1,true
+project,ai_generated_review_detection,featured,technology,Python,3,1,true
+project,ai_generated_review_detection,featured,technology,pandas,3,2,true
+project,ai_generated_review_detection,featured,technology,scikit-learn,3,3,true
+project,ai_generated_review_detection,featured,technology,Natural Language Processing,3,4,true
+project,ai_generated_review_detection,featured,technology,Text Classification,3,5,true
+
+project,port_efficiency_decision_support,standard,title,Port Efficiency Decision Support System,4,1,true
+project,port_efficiency_decision_support,standard,slug,port-efficiency-decision-support-system,4,2,true
+project,port_efficiency_decision_support,standard,category,Data Analytics · Decision Support,4,3,true
+project,port_efficiency_decision_support,standard,summary,A data-driven decision-support system analysing operational patterns across Baltic and German ports using more than 1.3 million records.,4,4,true
+project,port_efficiency_decision_support,standard,short_description,Large-scale port analysis converted into operational insights and decision-support recommendations.,4,5,true
+project,port_efficiency_decision_support,standard,status,Portfolio Project,4,6,true
+project,port_efficiency_decision_support,standard,role,Data Analyst and Developer,4,7,true
+project,port_efficiency_decision_support,standard,dataset,Operational port data covering Baltic and German ports.,4,8,true
+project,port_efficiency_decision_support,standard,data_scale,"1,330,169 rows · 25 columns",4,9,true
+project,port_efficiency_decision_support,standard,methodology,"Data cleaning, exploratory analysis, SQL-backed processing, visualization and insight-driven decision support.",4,1,true
+project,port_efficiency_decision_support,standard,metric,"1,330,169 records",4,1,true
+project,port_efficiency_decision_support,standard,metric,25 columns,4,2,true
+project,port_efficiency_decision_support,standard,technology,Python,4,1,true
+project,port_efficiency_decision_support,standard,technology,pandas,4,2,true
+project,port_efficiency_decision_support,standard,technology,SQLite,4,3,true
+project,port_efficiency_decision_support,standard,technology,Matplotlib,4,4,true
+project,port_efficiency_decision_support,standard,technology,Seaborn,4,5,true
+
+project,kkbox_customer_churn_prediction,standard,title,Customer Churn Prediction — KKBox,5,1,true
+project,kkbox_customer_churn_prediction,standard,slug,kkbox-customer-churn-prediction,5,2,true
+project,kkbox_customer_churn_prediction,standard,category,Machine Learning · Customer Analytics,5,3,true
+project,kkbox_customer_churn_prediction,standard,summary,A machine-learning project focused on predicting customer churn in a digital music-streaming environment.,5,4,true
+project,kkbox_customer_churn_prediction,standard,short_description,Customer churn modelling using behavioural and subscription data.,5,5,true
+project,kkbox_customer_churn_prediction,standard,status,Portfolio Project,5,6,true
+project,kkbox_customer_churn_prediction,standard,role,Machine Learning Engineer,5,7,true
+project,kkbox_customer_churn_prediction,standard,problem,Identify customers at risk of leaving a subscription-based music-streaming platform.,5,8,true
+project,kkbox_customer_churn_prediction,standard,technology,Python,5,1,true
+project,kkbox_customer_churn_prediction,standard,technology,pandas,5,2,true
+project,kkbox_customer_churn_prediction,standard,technology,scikit-learn,5,3,true
+project,kkbox_customer_churn_prediction,standard,technology,Machine Learning,5,4,true
+
+project,android_malware_detection,standard,title,Android Malware Detection using Machine Learning,6,1,true
+project,android_malware_detection,standard,slug,android-malware-detection-machine-learning,6,2,true
+project,android_malware_detection,standard,category,Cybersecurity · Machine Learning,6,3,true
+project,android_malware_detection,standard,summary,A machine-learning research project for classifying Android applications and identifying malicious behaviour through application-level features.,6,4,true
+project,android_malware_detection,standard,short_description,Machine-learning-based Android application malware classification.,6,5,true
+project,android_malware_detection,standard,status,Bachelor’s Research Project,6,6,true
+project,android_malware_detection,standard,role,Machine Learning Researcher,6,7,true
+project,android_malware_detection,standard,technology,Python,6,1,true
+project,android_malware_detection,standard,technology,Machine Learning,6,2,true
+project,android_malware_detection,standard,technology,Android Security,6,3,true
+project,android_malware_detection,standard,technology,Classification,6,4,true
+
+project,cloud_brain_stroke_detection,standard,title,Cloud-Based Brain Stroke Detection,7,1,true
+project,cloud_brain_stroke_detection,standard,slug,cloud-based-brain-stroke-detection,7,2,true
+project,cloud_brain_stroke_detection,standard,category,Healthcare AI · Full-Stack Machine Learning,7,3,true
+project,cloud_brain_stroke_detection,standard,summary,A machine-learning application served through a Flask web interface and deployed using AWS cloud infrastructure.,7,4,true
+project,cloud_brain_stroke_detection,standard,short_description,Cloud-hosted stroke-risk prediction with a user-facing Flask application.,7,5,true
+project,cloud_brain_stroke_detection,standard,status,Portfolio Project,7,6,true
+project,cloud_brain_stroke_detection,standard,role,Machine Learning and Backend Developer,7,7,true
+project,cloud_brain_stroke_detection,standard,technology,Python,7,1,true
+project,cloud_brain_stroke_detection,standard,technology,Flask,7,2,true
+project,cloud_brain_stroke_detection,standard,technology,Machine Learning,7,3,true
+project,cloud_brain_stroke_detection,standard,technology,AWS,7,4,true
+
+project,pin_your_spot,standard,title,Pin Your Spot,8,1,true
+project,pin_your_spot,standard,slug,pin-your-spot-mobile-application,8,2,true
+project,pin_your_spot,standard,category,Mobile Application Development,8,3,true
+project,pin_your_spot,standard,summary,"A mobile application project focused on saving, organising and interacting with location-based places.",8,4,true
+project,pin_your_spot,standard,short_description,A location-oriented mobile application for managing personally relevant places.,8,5,true
+project,pin_your_spot,standard,status,Portfolio Project,8,6,true
+project,pin_your_spot,standard,role,Mobile Application Developer,8,7,true
+project,pin_your_spot,standard,technology,Mobile Development,8,1,true
+project,pin_your_spot,standard,technology,Location Services,8,2,true
+
+project,bilteam_car_auction_marketplace,standard,title,BilTeam Car Auction Marketplace,9,1,false
+project,bilteam_car_auction_marketplace,standard,slug,bilteam-car-auction-marketplace,9,2,false
+project,bilteam_car_auction_marketplace,standard,category,Full-Stack · Mobile · Firebase,9,3,false
+project,bilteam_car_auction_marketplace,standard,summary,"A production-oriented Sweden-first car-auction marketplace with web, admin and mobile systems.",9,4,false
+project,bilteam_car_auction_marketplace,standard,short_description,"A multi-platform marketplace with auction, payment, deal, moderation and notification workflows.",9,5,false
+project,bilteam_car_auction_marketplace,standard,status,Paid Freelance Client Project,9,6,false
+project,bilteam_car_auction_marketplace,standard,year,2026,9,7,false
+project,bilteam_car_auction_marketplace,standard,role,Full-Stack and Mobile Engineer,9,8,false
+project,bilteam_car_auction_marketplace,standard,technology,Next.js,9,1,false
+project,bilteam_car_auction_marketplace,standard,technology,React,9,2,false
+project,bilteam_car_auction_marketplace,standard,technology,Firebase,9,3,false
+project,bilteam_car_auction_marketplace,standard,technology,TypeScript,9,4,false
+project,bilteam_car_auction_marketplace,standard,technology,Flutter,9,5,false
+project,bilteam_car_auction_marketplace,standard,technology,Dart,9,6,false
+
+publication,distributed_inference_publication,publication,title,Scaling Distributed Inference of BLOOMZ-560M using Petals,1,1,true
+publication,distributed_inference_publication,publication,summary,A research study examining collaborative and distributed transformer inference using BLOOMZ-560M and the Petals ecosystem.,1,2,true
+publication,distributed_inference_publication,publication,research_problem,"Understanding the practicality, scalability and performance behaviour of decentralized language-model inference.",1,3,true
+publication,distributed_inference_publication,publication,contribution,Configured the distributed inference workflow and analysed system behaviour and engineering trade-offs.,1,1,true
+publication,distributed_inference_publication,publication,methodology,Experimental evaluation of BLOOMZ-560M inference using Petals.,1,1,true
+publication,distributed_inference_publication,publication,author,VEERABABU SUTAPALLI,1,1,true
+publication,distributed_inference_publication,publication,publication_url,REPLACE_WITH_DISTRIBUTED_LLM_PUBLICATION_URL,1,4,true
+
+publication,android_malware_publication,publication,title,Android Malware Detection using Machine Learning,2,1,true
+publication,android_malware_publication,publication,summary,A research study applying machine-learning methods to distinguish malicious Android applications from benign applications.,2,2,true
+publication,android_malware_publication,publication,research_problem,Detecting malware through application-derived features and supervised classification.,2,3,true
+publication,android_malware_publication,publication,contribution,Developed and evaluated the machine-learning workflow used for Android malware classification.,2,1,true
+publication,android_malware_publication,publication,author,VEERABABU SUTAPALLI,2,1,true
+publication,android_malware_publication,publication,publication_url,REPLACE_WITH_ANDROID_MALWARE_PUBLICATION_URL,2,4,true
+
+experience,nordic_stone_programming_intern,experience,organization,Nordic Stone Studio,1,1,true
+experience,nordic_stone_programming_intern,experience,role,Programming Intern,1,2,true
+experience,nordic_stone_programming_intern,experience,employment_type,Internship,1,3,true
+experience,nordic_stone_programming_intern,experience,location,Sweden,1,4,true
+experience,nordic_stone_programming_intern,experience,start_date,2024-02,1,5,true
+experience,nordic_stone_programming_intern,experience,end_date,2024-06,1,6,true
+experience,nordic_stone_programming_intern,experience,summary,"Worked in a Python, JavaScript, Django and React development environment while supporting software development and AI/LLM experimentation.",1,7,true
+experience,nordic_stone_programming_intern,experience,technology,Python,1,1,true
+experience,nordic_stone_programming_intern,experience,technology,JavaScript,1,2,true
+experience,nordic_stone_programming_intern,experience,technology,Django,1,3,true
+experience,nordic_stone_programming_intern,experience,technology,React,1,4,true
+
+experience,jntu_big_data_ml_intern,experience,organization,JNTU Incubation Centre,2,1,true
+experience,jntu_big_data_ml_intern,experience,role,Big Data and Machine Learning Engineer Intern,2,2,true
+experience,jntu_big_data_ml_intern,experience,employment_type,Internship,2,3,true
+experience,jntu_big_data_ml_intern,experience,location,India,2,4,true
+experience,jntu_big_data_ml_intern,experience,start_date,2022-01,2,5,true
+experience,jntu_big_data_ml_intern,experience,end_date,2022-07,2,6,true
+experience,jntu_big_data_ml_intern,experience,summary,Built and supported distributed data-processing and machine-learning workflows using PySpark across datasets containing more than 100 million records.,2,7,true
+experience,jntu_big_data_ml_intern,experience,bullet,Worked with PySpark-based distributed processing workflows.,2,1,true
+experience,jntu_big_data_ml_intern,experience,bullet,Supported ETL and machine-learning pipeline development.,2,2,true
+experience,jntu_big_data_ml_intern,experience,bullet,"Collaborated across frontend, backend and machine-learning workstreams.",2,3,true
+experience,jntu_big_data_ml_intern,experience,metric,100M+ records,2,1,true
+experience,jntu_big_data_ml_intern,experience,technology,Python,2,1,true
+experience,jntu_big_data_ml_intern,experience,technology,PySpark,2,2,true
+experience,jntu_big_data_ml_intern,experience,technology,Machine Learning,2,3,true
+experience,jntu_big_data_ml_intern,experience,technology,ETL,2,4,true
+
+experience,jntu_mobile_application_intern,experience,organization,JNTU Incubation Centre,3,1,true
+experience,jntu_mobile_application_intern,experience,role,Mobile Application Developer Intern,3,2,true
+experience,jntu_mobile_application_intern,experience,employment_type,Internship,3,3,true
+experience,jntu_mobile_application_intern,experience,location,India,3,4,true
+experience,jntu_mobile_application_intern,experience,start_date,2021-06,3,5,true
+experience,jntu_mobile_application_intern,experience,end_date,2021-12,3,6,true
+experience,jntu_mobile_application_intern,experience,summary,"Contributed to an Agricultural Advisory Board application using Python, Flask, REST APIs and MySQL.",3,7,true
+experience,jntu_mobile_application_intern,experience,technology,Python,3,1,true
+experience,jntu_mobile_application_intern,experience,technology,Flask,3,2,true
+experience,jntu_mobile_application_intern,experience,technology,REST APIs,3,3,true
+experience,jntu_mobile_application_intern,experience,technology,MySQL,3,4,true
+experience,jntu_mobile_application_intern,experience,technology,Selenium,3,5,true
+experience,jntu_mobile_application_intern,experience,technology,Postman,3,6,true
+
+experience,bilteam_freelance,experience,organization,BilTeam,4,1,false
+experience,bilteam_freelance,experience,role,Full-Stack and Mobile Engineer,4,2,false
+experience,bilteam_freelance,experience,employment_type,Paid Freelance Client Project,4,3,false
+experience,bilteam_freelance,experience,location,Remote · Sweden-focused product,4,4,false
+experience,bilteam_freelance,experience,start_date,2026-02,4,5,false
+experience,bilteam_freelance,experience,end_date,Present,4,6,false
+experience,bilteam_freelance,experience,summary,"Designed and implemented a Firebase-based car-auction marketplace across web, admin and mobile applications.",4,7,false
+experience,bilteam_freelance,experience,technology,Next.js,4,1,false
+experience,bilteam_freelance,experience,technology,React,4,2,false
+experience,bilteam_freelance,experience,technology,Firebase,4,3,false
+experience,bilteam_freelance,experience,technology,Flutter,4,4,false
+
+education,bth_msc_computer_science,education,institution,Blekinge Institute of Technology,1,1,true
+education,bth_msc_computer_science,education,degree,Master of Science,1,2,true
+education,bth_msc_computer_science,education,field_of_study,Computer Science,1,3,true
+education,bth_msc_computer_science,education,location,Sweden,1,4,true
+education,bth_msc_computer_science,education,start_date,2023-08,1,5,true
+education,bth_msc_computer_science,education,end_date,2026-02,1,6,true
+education,bth_msc_computer_science,education,description,"Graduate studies in computer science with work spanning machine learning, distributed systems, data engineering, software engineering and applied research.",1,7,true
+education,bth_msc_computer_science,education,specialization,Machine Learning,1,1,true
+education,bth_msc_computer_science,education,specialization,Artificial Intelligence,1,2,true
+education,bth_msc_computer_science,education,specialization,Data Engineering,1,3,true
+education,bth_msc_computer_science,education,specialization,Distributed Systems,1,4,true
+
+education,jntuk_btech_cse,education,institution,Jawaharlal Nehru Technological University Kakinada,2,1,true
+education,jntuk_btech_cse,education,degree,Bachelor of Technology,2,2,true
+education,jntuk_btech_cse,education,field_of_study,Computer Science and Engineering,2,3,true
+education,jntuk_btech_cse,education,location,India,2,4,true
+education,jntuk_btech_cse,education,start_date,2019-08,2,5,true
+education,jntuk_btech_cse,education,end_date,2023-06,2,6,true
+education,jntuk_btech_cse,education,description,"Undergraduate computer-science education covering programming, algorithms, databases, operating systems, networks, software engineering and machine learning.",2,7,true
+education,jntuk_btech_cse,education,specialization,Computer Science and Engineering,2,1,true
+
+achievement,scaler_edge_apex_rank,achievement,title,2nd Rank — Scaler Edge Apex 2021,1,1,true
+achievement,scaler_edge_apex_rank,achievement,description,"Achieved second rank in Scaler Edge Apex 2021, demonstrating competitive problem-solving and technical aptitude.",1,2,true
+achievement,scaler_edge_apex_rank,achievement,date,2021,1,3,true
+
+achievement,hackerrank_profiles,achievement,title,HackerRank Problem Solving and Python,2,1,true
+achievement,hackerrank_profiles,achievement,description,Maintains public HackerRank profiles demonstrating continued programming and problem-solving practice.,2,2,true
+achievement,hackerrank_profiles,achievement,url,https://www.hackerrank.com/profile/svb491,2,3,true
+
+skill_group,artificial_intelligence,skill_group,title,AI & Machine Learning,1,1,true
+skill_group,artificial_intelligence,skill_group,skill,Python,1,1,true
+skill_group,artificial_intelligence,skill_group,skill,scikit-learn,1,2,true
+skill_group,artificial_intelligence,skill_group,skill,PyTorch,1,3,true
+skill_group,artificial_intelligence,skill_group,skill,Machine Learning,1,4,true
+skill_group,artificial_intelligence,skill_group,skill,Deep Learning,1,5,true
+skill_group,artificial_intelligence,skill_group,skill,Time-Series Forecasting,1,6,true
+skill_group,artificial_intelligence,skill_group,skill,NLP,1,7,true
+skill_group,artificial_intelligence,skill_group,skill,Model Evaluation,1,8,true
+skill_group,artificial_intelligence,skill_group,skill,Explainable AI,1,9,true
+
+skill_group,genai_llm,skill_group,title,GenAI & LLM Engineering,2,1,true
+skill_group,genai_llm,skill_group,skill,LLM Applications,2,1,true
+skill_group,genai_llm,skill_group,skill,Prompt Engineering,2,2,true
+skill_group,genai_llm,skill_group,skill,RAG,2,3,true
+skill_group,genai_llm,skill_group,skill,Embeddings,2,4,true
+skill_group,genai_llm,skill_group,skill,Vector Search,2,5,true
+skill_group,genai_llm,skill_group,skill,Structured Outputs,2,6,true
+skill_group,genai_llm,skill_group,skill,Tool Calling,2,7,true
+skill_group,genai_llm,skill_group,skill,AI Agents,2,8,true
+
+skill_group,data_engineering,skill_group,title,Data Engineering & Analytics,3,1,true
+skill_group,data_engineering,skill_group,skill,pandas,3,1,true
+skill_group,data_engineering,skill_group,skill,NumPy,3,2,true
+skill_group,data_engineering,skill_group,skill,SQL,3,3,true
+skill_group,data_engineering,skill_group,skill,PySpark,3,4,true
+skill_group,data_engineering,skill_group,skill,ETL,3,5,true
+skill_group,data_engineering,skill_group,skill,Data Pipelines,3,6,true
+skill_group,data_engineering,skill_group,skill,Parquet,3,7,true
+skill_group,data_engineering,skill_group,skill,SQLite,3,8,true
+skill_group,data_engineering,skill_group,skill,MySQL,3,9,true
+skill_group,data_engineering,skill_group,skill,Data Visualization,3,10,true
+
+skill_group,backend_engineering,skill_group,title,Backend Engineering,4,1,true
+skill_group,backend_engineering,skill_group,skill,Flask,4,1,true
+skill_group,backend_engineering,skill_group,skill,FastAPI,4,2,true
+skill_group,backend_engineering,skill_group,skill,Django,4,3,true
+skill_group,backend_engineering,skill_group,skill,Node.js,4,4,true
+skill_group,backend_engineering,skill_group,skill,Express.js,4,5,true
+skill_group,backend_engineering,skill_group,skill,REST APIs,4,6,true
+skill_group,backend_engineering,skill_group,skill,Authentication,4,7,true
+skill_group,backend_engineering,skill_group,skill,API Testing,4,8,true
+
+skill_group,frontend_engineering,skill_group,title,Frontend Engineering,5,1,true
+skill_group,frontend_engineering,skill_group,skill,HTML,5,1,true
+skill_group,frontend_engineering,skill_group,skill,CSS,5,2,true
+skill_group,frontend_engineering,skill_group,skill,JavaScript,5,3,true
+skill_group,frontend_engineering,skill_group,skill,TypeScript,5,4,true
+skill_group,frontend_engineering,skill_group,skill,React,5,5,true
+skill_group,frontend_engineering,skill_group,skill,Next.js,5,6,true
+skill_group,frontend_engineering,skill_group,skill,Vite,5,7,true
+skill_group,frontend_engineering,skill_group,skill,Tailwind CSS,5,8,true
+
+skill_group,production_cloud,skill_group,title,"Production, Cloud & Quality",6,1,true
+skill_group,production_cloud,skill_group,skill,Git,6,1,true
+skill_group,production_cloud,skill_group,skill,GitHub,6,2,true
+skill_group,production_cloud,skill_group,skill,Docker,6,3,true
+skill_group,production_cloud,skill_group,skill,Firebase,6,4,true
+skill_group,production_cloud,skill_group,skill,Azure,6,5,true
+skill_group,production_cloud,skill_group,skill,AWS,6,6,true
+skill_group,production_cloud,skill_group,skill,Vercel,6,7,true
+skill_group,production_cloud,skill_group,skill,CI/CD,6,8,true
+skill_group,production_cloud,skill_group,skill,Postman,6,9,true
+skill_group,production_cloud,skill_group,skill,Playwright,6,10,true
+skill_group,production_cloud,skill_group,skill,Selenium,6,11,true
+
+skill_group,mobile_engineering,skill_group,title,Mobile Engineering,7,1,true
+skill_group,mobile_engineering,skill_group,skill,Flutter,7,1,true
+skill_group,mobile_engineering,skill_group,skill,Dart,7,2,true
+skill_group,mobile_engineering,skill_group,skill,Firebase Authentication,7,3,true
+skill_group,mobile_engineering,skill_group,skill,Firestore,7,4,true
+skill_group,mobile_engineering,skill_group,skill,Firebase Cloud Messaging,7,5,true
+
+contact,primary,contact,email,mailto:isutapalliveerababu@gmail.com,1,1,true
+contact,primary,contact,url,mailto:isutapalliveerababu@gmail.com,1,2,true
+contact,primary,contact,value,"Open to Machine Learning, AI/GenAI, Data and Software Engineering opportunities.",1,3,true
+contact,primary,contact,location,"Hyderabad, India · Open to India, Sweden and European opportunities",1,4,true
+
+footer,main,footer,copyright,© 2026 VEERABABU SUTAPALLI,1,1,true
+footer,main,footer,tagline,Building reliable AI systems from data and models to intelligent applications.,1,2,true
+footer,main,footer,resume_path,/assets/resume/VEERABABU_SUTAPALLI_Resume.pdf,1,3,true
