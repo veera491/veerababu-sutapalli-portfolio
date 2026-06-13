@@ -58,3 +58,42 @@ Pushing code to the `main` branch automatically triggers Vercel deployment. Verc
 
 ## 13. Warning
 **Do not run `npm audit fix --force` without reviewing breaking changes.** It may upgrade fundamental dependencies (like Next.js or React) beyond the supported versions for this project.
+
+## 14. Supported Sections
+The CSV engine safely identifies: `site`, `seo`, `theme`, `navigation`, `hero`, `hero_cta`, `proof`, `about`, `project`, `publication`, `experience`, `capability`, `skill_group`, `education`, `achievement`, `social`, `contact`, `footer`. Any unlisted section will trigger a build warning but pass.
+
+## 15. URL and Asset Rules
+Fields ending in `_url` must use `https://`, `mailto:`, start with `/`, or be `REPLACE_WITH_`.
+Fields ending in `_path` (plus `image`, `diagram`, `resume_path`, `static_image`, `frame_path`) must be relative public assets starting with `assets/`, `/`, or `REPLACE_WITH_`. Asset paths cannot contain `..`. Image files remain under `public/assets` while the CSV only stores their string paths.
+
+## 16. Boolean and Numeric Field Rules
+Fields like `cinematic_enabled`, `featured`, `open_to_work` must be explicitly string matched to `true` or `false`.
+Configurations like `frame_count`, `animation_duration`, `display_limit` must be positive integers. 
+
+## 17. Placeholder Behaviour
+Any value prefixed with `REPLACE_WITH_` is safely parsed but logged as a warning during the content validation build step. Use this to trace unfinalized content.
+
+## 18. Reference: Project, Publication, Experience, Education Fields
+- **project**: Requires `title`, `slug`, `category`, `summary`. Supports arrays like `technology`, `metric`, `finding`.
+- **publication**: Requires `title`, `summary`. Supports arrays like `author`, `finding`, `contribution`.
+- **experience**: Requires `organization`, `role`, `start_date`, `end_date`, `summary`. Supports arrays like `bullet`.
+- **education**: Requires `institution`, `degree`, `start_date`, `end_date`. Supports arrays like `achievement`.
+
+## 19. Examples
+### Adding a Project
+```csv
+project,ai_sys,standard,title,AI Agent System,1,1,true
+project,ai_sys,standard,slug,ai-agent-system,1,2,true
+project,ai_sys,standard,category,Engineering,1,3,true
+project,ai_sys,standard,summary,An autonomous agent.,1,4,true
+project,ai_sys,standard,technology,Python,1,5,true
+project,ai_sys,standard,technology,Next.js,1,6,true
+```
+### Adding an Experience
+```csv
+experience,exp_1,experience,organization,Tech Corp,1,1,true
+experience,exp_1,experience,role,Engineer,1,2,true
+experience,exp_1,experience,start_date,2022-01,1,3,true
+experience,exp_1,experience,end_date,Present,1,4,true
+experience,exp_1,experience,summary,Developed AI systems.,1,5,true
+```

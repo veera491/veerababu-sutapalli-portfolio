@@ -1,4 +1,4 @@
-import { getSection, requireItem, requireStringField, getField } from '@/lib/csv/repository';
+import { getSection, requireItem, requireStringField, getField, getOptionalStringField } from '@/lib/csv/repository';
 
 export default async function Home() {
   const identityItem = await requireItem('site', 'identity');
@@ -11,6 +11,12 @@ export default async function Home() {
   const socialItems = await getSection('social');
   const proofItems = await getSection('proof');
 
+  // New Step 5A items
+  const seoGlobal = await requireItem('seo', 'global');
+  const seoTitle = getOptionalStringField(seoGlobal, 'title');
+  const themeGlobal = await requireItem('theme', 'global');
+  const navItems = await getSection('navigation');
+
   return (
     <main style={{ padding: '2rem', fontFamily: 'sans-serif', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' }}>
       <header style={{ marginBottom: '2rem' }}>
@@ -19,6 +25,14 @@ export default async function Home() {
         <p style={{ margin: '0 0 0.5rem 0' }}>{tagline}</p>
         {location && <p style={{ color: '#555' }}>{location}</p>}
       </header>
+
+      {seoTitle && (
+        <section style={{ marginBottom: '2rem', padding: '1rem', backgroundColor: '#f0f0f0' }}>
+          <p><strong>SEO Title:</strong> {seoTitle}</p>
+          <p><strong>Theme Accent:</strong> {getOptionalStringField(themeGlobal, 'accent')}</p>
+          <p><strong>Navigation Items:</strong> {navItems.length}</p>
+        </section>
+      )}
 
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.5rem', borderBottom: '1px solid #ccc', paddingBottom: '0.5rem' }}>Proof of Work</h2>
@@ -37,7 +51,7 @@ export default async function Home() {
             const label = requireStringField(item, 'label');
             const url = requireStringField(item, 'url');
             
-            if (url === 'REPLACE_WITH_LINKEDIN_URL') {
+            if (url.startsWith('REPLACE_WITH_')) {
               return (
                 <li key={item.itemId} style={{ color: '#888' }}>
                   {label} (Coming Soon)

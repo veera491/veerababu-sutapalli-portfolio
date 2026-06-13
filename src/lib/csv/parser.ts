@@ -3,12 +3,12 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import Papa from 'papaparse';
 import { validateCsvRow } from './schema';
-import { CsvPortfolioRow, PortfolioContent } from './types';
-import { REPEATED_FIELDS } from './constants';
+import { CsvPortfolioRow, PortfolioContent, ParsedCsvResult } from './types';
+import { REPEATED_FIELDS, KNOWN_SECTIONS, KNOWN_ITEM_TYPES } from './constants';
 
 type RawCsvRecord = Record<string, unknown>;
 
-export async function parseCsv(): Promise<PortfolioContent> {
+export async function parseCsv(): Promise<ParsedCsvResult> {
   const filePath = path.resolve(process.cwd(), 'content', 'portfolio.csv');
   let fileContent: string;
   try {
@@ -46,13 +46,26 @@ export async function parseCsv(): Promise<PortfolioContent> {
     throw new Error(`Unexpected columns: ${unexpectedColumns.join(', ')}`);
   }
 
+  const warnings: string[] = [];
+
   parseResult.data.forEach((rawRow, index) => {
-    // skip completely blank objects returned by papaparse for blank lines that slipped through
+    // skip completely blank objects
     if (Object.keys(rawRow).length === 1 && rawRow[actualColumns[0]] === '') return;
     
     const rowNumber = index + 2; 
     try {
         const validatedRow = validateCsvRow(rawRow, rowNumber);
+        
+        if (!KNOWN_SECTIONS.includes(validatedRow.section)) {
+            warnings.push(`Row ${rowNumber}: Unknown section '${validatedRow.section}'`);
+        }
+        if (!KNOWN_ITEM_TYPES.includes(validatedRow.item_type)) {
+            warnings.push(`Row ${rowNumber}: Unknown item_type '${validatedRow.item_type}'`);
+        }
+        if (validatedRow.value.startsWith('REPLACE_WITH_')) {
+            warnings.push(`Row ${rowNumber}: Placeholder value present for field '${validatedRow.field}'`);
+        }
+
         rows.push(validatedRow);
     } catch (e) {
         throw new Error(e instanceof Error ? e.message : String(e));
@@ -92,7 +105,7 @@ export async function parseCsv(): Promise<PortfolioContent> {
     const fieldValuesOrderMap: Record<string, number[]> = {};
 
     for (const row of itemRows) {
-      const isRepeated = REPEATED_FIELDS.includes(row.field);
+      const isRepeated = REPEATED_FIELDS.includes(row.field.toLowerCase());
       if (isRepeated) {
         if (!fields[row.field]) {
           fields[row.field] = [];
@@ -119,7 +132,7 @@ export async function parseCsv(): Promise<PortfolioContent> {
     }
 
     for (const field of Object.keys(fields)) {
-      if (REPEATED_FIELDS.includes(field)) {
+      if (REPEATED_FIELDS.includes(field.toLowerCase())) {
         const arr = fields[field] as string[];
         const orderArr = fieldValuesOrderMap[field];
         const combined = arr.map((val, i) => ({ val, order: orderArr[i] }));
@@ -158,41 +171,108 @@ export async function parseCsv(): Promise<PortfolioContent> {
     }
 
     for (const item of items) {
-      if (item.enabled && item.fields['slug']) {
+      if (item.enabled && item.fields['slug'] && section === 'project') {
         const slug = item.fields['slug'] as string;
-        if (!/^[a-z0-9-]+$/.test(slug)) {
-          throw new Error(`Invalid slug '${slug}' in ${section}/${item.itemId}. Must be lowercase kebab-case.`);
-        }
         if (allEnabledSlugs.has(slug)) {
-          throw new Error(`Duplicate slug '${slug}' found in enabled items. Affected: ${section}/${item.itemId}.`);
+          throw new Error(`Duplicate slug '${slug}' found in enabled project items. Affected: ${section}/${item.itemId}.`);
         }
         allEnabledSlugs.add(slug);
+      }
+
+      // Section-specific required fields
+      if (item.enabled) {
+        if (section === 'site' && item.itemId === 'identity') {
+          ['full_name', 'primary_role', 'tagline', 'location', 'email'].forEach(f => {
+            if (!item.fields[f]) throw new Error(`Missing required field '${f}' in site/identity`);
+          });
+        }
+        if (section === 'seo' && item.itemId === 'global') {
+          ['title', 'description'].forEach(f => {
+            if (!item.fields[f]) throw new Error(`Missing required field '${f}' in seo/global`);
+          });
+        }
+        if (section === 'theme' && item.itemId === 'global') {
+          ['background', 'surface', 'text', 'muted', 'accent'].forEach(f => {
+            if (!item.fields[f]) throw new Error(`Missing required field '${f}' in theme/global`);
+          });
+        }
+        if (section === 'navigation') {
+          ['label', 'target'].forEach(f => {
+            if (!item.fields[f]) throw new Error(`Missing required field '${f}' in navigation/${item.itemId}`);
+          });
+        }
+        if (section === 'hero' && item.itemType === 'phase') {
+          if (!item.fields['text'] && !item.fields['title'] && !item.fields['eyebrow'] && !item.fields['supporting']) {
+            throw new Error(`hero phase ${item.itemId} requires at least one of: text, title, eyebrow, supporting`);
+          }
+        }
+        if (section === 'hero_cta') {
+          ['label', 'target'].forEach(f => {
+            if (!item.fields[f]) throw new Error(`Missing required field '${f}' in hero_cta/${item.itemId}`);
+          });
+        }
+        if (section === 'proof') {
+          if (!item.fields['value']) throw new Error(`Missing required field 'value' in proof/${item.itemId}`);
+        }
+        if (section === 'project') {
+          ['title', 'slug', 'category', 'summary'].forEach(f => {
+            if (!item.fields[f]) throw new Error(`Missing required field '${f}' in project/${item.itemId}`);
+          });
+        }
+        if (section === 'publication') {
+          ['title', 'summary'].forEach(f => {
+            if (!item.fields[f]) throw new Error(`Missing required field '${f}' in publication/${item.itemId}`);
+          });
+        }
+        if (section === 'experience') {
+          ['organization', 'role', 'start_date', 'end_date', 'summary'].forEach(f => {
+            if (!item.fields[f]) throw new Error(`Missing required field '${f}' in experience/${item.itemId}`);
+          });
+        }
+        if (section === 'capability') {
+          ['title', 'description'].forEach(f => {
+            if (!item.fields[f]) throw new Error(`Missing required field '${f}' in capability/${item.itemId}`);
+          });
+        }
+        if (section === 'skill_group') {
+          if (!item.fields['title']) throw new Error(`Missing required field 'title' in skill_group/${item.itemId}`);
+          if (!item.fields['skill'] || !Array.isArray(item.fields['skill']) || item.fields['skill'].length === 0) {
+            throw new Error(`skill_group/${item.itemId} requires at least one repeated 'skill'`);
+          }
+        }
+        if (section === 'education') {
+          ['institution', 'degree', 'start_date', 'end_date'].forEach(f => {
+            if (!item.fields[f]) throw new Error(`Missing required field '${f}' in education/${item.itemId}`);
+          });
+        }
+        if (section === 'achievement') {
+          ['title', 'description'].forEach(f => {
+            if (!item.fields[f]) throw new Error(`Missing required field '${f}' in achievement/${item.itemId}`);
+          });
+        }
+        if (section === 'social') {
+          ['label', 'url'].forEach(f => {
+            if (!item.fields[f]) throw new Error(`Missing required field '${f}' in social/${item.itemId}`);
+          });
+        }
+        if (section === 'contact') {
+          if (!item.fields['email'] && !item.fields['url'] && !item.fields['value']) {
+             throw new Error(`contact/${item.itemId} requires at least one of: email, url, value`);
+          }
+        }
       }
     }
   }
 
+  // Check site/identity existance (kept from previous implementation)
   const identityItem = content['site']?.find(i => i.itemId === 'identity');
   if (!identityItem) {
     throw new Error(`The CSV must contain site/identity`);
   }
   
-  if (!identityItem.fields['full_name'] || !identityItem.fields['primary_role'] || !identityItem.fields['tagline']) {
-    throw new Error(`site/identity must contain full_name, primary_role, and tagline`);
-  }
-
   if (identityItem.fields['full_name'] !== 'VEERABABU SUTAPALLI') {
     throw new Error(`full_name must equal VEERABABU SUTAPALLI`);
   }
 
-  const socialItems = content['social'] || [];
-  for (const item of socialItems) {
-    if (item.fields['url']) {
-        const url = item.fields['url'] as string;
-        if (!url.startsWith('https://') && !url.startsWith('mailto:') && url !== 'REPLACE_WITH_LINKEDIN_URL') {
-            throw new Error(`Social URL for ${item.itemId} must start with https://, mailto:, or use explicit placeholder REPLACE_WITH_LINKEDIN_URL. Found: ${url}`);
-        }
-    }
-  }
-
-  return content;
+  return { content, warnings: Array.from(new Set(warnings)) };
 }

@@ -21,3 +21,8 @@ export interface PortfolioItem {
 }
 
 export type PortfolioContent = Record<string, PortfolioItem[]>;
+
+export interface ParsedCsvResult {
+  content: PortfolioContent;
+  warnings: string[];
+}
