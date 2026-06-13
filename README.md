@@ -97,3 +97,17 @@ experience,exp_1,experience,start_date,2022-01,1,3,true
 experience,exp_1,experience,end_date,Present,1,4,true
 experience,exp_1,experience,summary,Developed AI systems.,1,5,true
 ```
+
+## 20. Asset Architecture
+See `public/assets/README.md` for complete details on directory structure, asset naming rules, handling of portraits, résumés, required versus optional assets, fallback strategies, and project-image rules.
+
+### Asset Validation
+Run `npm run validate:assets` to verify the asset system. 
+Missing required assets fail the build. Missing optional assets load SVG fallbacks. 
+Warning thresholds: Portraits > 700KB, Projects > 1MB, SVGs > 250KB, PDFs > 5MB.
+
+### Real Evidence Policy
+Do not invent project charts, screenshots, or metrics. All assets must accurately represent professional reality.
+
+### Education Attribution
+Any institution logo or campus image must comply with educational attribution standards where applicable.

@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "validate:content": "tsx --conditions=react-server scripts/validate-content.ts",
-    "build": "npm run validate:content && next build",
+    "validate:assets": "tsx --conditions=react-server scripts/validate-assets.ts",
+    "build": "npm run validate:content && npm run validate:assets && next build",
     "start": "next start",
     "lint": "eslint",
-    "check": "npm run lint && npm run build"
+    "check": "npm run validate:content && npm run validate:assets && npm run lint && next build"
   },
   "dependencies": {
     "lucide-react": "^1.18.0",

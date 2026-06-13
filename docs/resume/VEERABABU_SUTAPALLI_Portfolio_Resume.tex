@@ -1,0 +1,225 @@
+\documentclass[10pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=0.55in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{needspace}
+
+% ---------- Page Setup ----------
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{0.96}
+\urlstyle{same}
+
+% ---------- Colors ----------
+\definecolor{sectiongray}{HTML}{222222}
+\definecolor{textgray}{HTML}{333333}
+
+% ---------- Section Formatting ----------
+\titleformat{\section}
+  {\large\bfseries\color{sectiongray}}
+  {}
+  {0em}
+  {}
+  [\vspace{-4pt}\titlerule]
+
+\titlespacing*{\section}{0pt}{8pt}{5pt}
+
+% ---------- List Formatting ----------
+\setlist[itemize]{
+    leftmargin=1.2em,
+    itemsep=2pt,
+    topsep=2pt,
+    parsep=0pt,
+    partopsep=0pt
+}
+
+% ---------- Custom Commands ----------
+\newcommand{\resumeSubheading}[4]{
+    \vspace{3pt}
+    \textbf{#1} \hfill #2\\
+    \textit{#3} \hfill \textit{#4}
+    \vspace{2pt}
+}
+
+\newcommand{\projectHeading}[3]{
+    \Needspace{7\baselineskip}
+    \textbf{#1} \hfill \href{#2}{GitHub}\\[-1pt]
+    \textit{#3}
+    \vspace{-2pt}
+}
+
+\newcommand{\educationHeading}[4]{
+    \textbf{#1} \hfill #2\\
+    #3 \hfill \textit{#4}
+    \vspace{2pt}
+}
+
+% ---------- Document ----------
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+    {\LARGE \textbf{VEERABABU SUTAPALLI}}\\[6pt]
+    {\normalsize \textbf{Machine Learning \& GenAI Engineer}}\\[3pt]
+    Hyderabad, India \textbar{}
+    \href{mailto:isutapalliveerababu@gmail.com}{isutapalliveerababu@gmail.com} \textbar{}
+    \href{https://veerababu-sutapalli-portfolio.vercel.app/}{Portfolio}\\[2pt]
+    \href{https://www.linkedin.com/in/veera-sutapalli}{linkedin.com/in/veera-sutapalli} \textbar{}
+    \href{https://github.com/veera491}{github.com/veera491} \textbar{}
+    \href{https://www.hackerrank.com/svb491}{hackerrank.com/svb491} \textbar{}
+    \href{https://leetcode.com/u/veera491/}{leetcode.com/u/veera491}
+\end{center}
+
+\vspace{-6pt}
+
+% ---------- Professional Summary ----------
+\section{Professional Summary}
+Computer Science postgraduate focused on machine learning, GenAI, LLM systems, and practical AI application development. Experienced in distributed LLM inference research, AI/LLM product-integration support, large-scale data processing, and ML/NLP projects using Python, PyTorch, Hugging Face, Scikit-learn, and PySpark. T-shaped engineer with supporting strengths across data engineering, backend APIs, full-stack systems, and cloud-backed delivery.
+
+% ---------- Technical Skills ----------
+\section{Technical Skills}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3.6cm} X}
+AI \& Machine Learning & Python, pandas, NumPy, Scikit-learn, PyTorch Basics, Supervised Learning, Feature Engineering, Cross Validation, Model Evaluation, Explainable AI \\
+GenAI \& NLP & Hugging Face Transformers, LLM Inference, NLP, Text Classification, Prompt Engineering, Embeddings, RAG Basics, Structured Outputs, LIME \\
+Data Engineering & SQL, MySQL, PySpark, HDFS, ETL, Distributed Processing, Data Cleaning, Parquet \\
+Backend \& Full-Stack & Flask, Django, React, Next.js, JavaScript, TypeScript, REST APIs, Firebase \\
+Cloud, Testing \& Tools & Azure VMs, AWS, Docker, Git, GitHub, Postman, Playwright, Selenium, Jupyter/Colab \\
+\end{tabularx}
+
+% ---------- Experience ----------
+\section{Experience}
+
+\resumeSubheading
+{Nordic Stone Studio}
+{Malm{\"o}, Sweden}
+{Programming Intern}
+{Feb 2024 -- Jun 2024}
+\begin{itemize}
+    \item Contributed to Tile Cozy's editor and product workflows by quickly understanding an existing Python, JavaScript, Django, and React codebase and implementing application features.
+    \item Supported LLM and Generative AI integration into product systems by preparing data inputs, contributing implementation support, and prototyping AI-assisted workflow components.
+    \item Collaborated through team meetings, technical discussions, and Git/GitHub workflows while consistently completing assigned development tasks within internship timelines.
+\end{itemize}
+
+\resumeSubheading
+{JNTU Incubation Centre, Innovation Research Centre}
+{Kakinada, India}
+{Big Data and Machine Learning Engineer Intern}
+{Jan 2022 -- Jul 2022}
+\begin{itemize}
+    \item Reduced computation time by 30\% while processing 100M+ healthcare and insurance records by engineering PySpark-based distributed workflows over HDFS.
+    \item Improved data consistency and reduced project time by 20\% by building ETL pipelines for patient, hospital, and insurance-claim analytics.
+    \item Supported insurance-eligibility prediction and web-based result delivery by preparing ML-ready datasets and collaborating on Python/MySQL-backed implementation.
+\end{itemize}
+
+\resumeSubheading
+{JNTU Incubation Centre, Innovation Research Centre}
+{Kakinada, India}
+{Mobile Application Developer Intern}
+{Jun 2021 -- Dec 2021}
+\begin{itemize}
+    \item Developed Python/Flask REST API and MySQL-backed workflows for the Agricultural Advisory Board application, supporting category-wise digitization of farmer grievances.
+    \item Reduced analysis time by 40\% through MySQL query optimization and improved reliability using unit checks, Selenium automation, and Postman API validation.
+\end{itemize}
+
+% ---------- Projects ----------
+\section{Selected Projects}
+
+\projectHeading
+{AI-Generated Review \& Comment Detection}
+{https://github.com/veera491/ai-generated-review-detection}
+{Python, NLP, Random Forest, Pseudo-Labelling, Explainable AI}
+\begin{itemize}
+    \item Built text-classification workflows across 487,898 labelled and 443,079 unlabelled records using cleaning, normalization, lemmatization, tokenization, EDA, and pseudo-labelling experiments.
+    \item Evaluated baseline, pseudo-labelled, and tuned Random Forest models using accuracy, precision, recall, F1-score, and AUC-ROC; achieved 0.85 accuracy and 0.94 AUC-ROC after tuning.
+    \item Improved model transparency through LIME, feature-importance analysis, and partial dependence plots.
+\end{itemize}
+
+\projectHeading
+{Decision Support System for Port Efficiency Analysis}
+{https://github.com/veera491/port-efficiency-decision-support-system}
+{Python, Flask, pandas, Data Analytics, ML Regression, Visualization}
+\begin{itemize}
+    \item Contributed to a Flask-based decision-support system analysing 1,330,169 maritime-operation records across 25 columns, including transit, waiting, dwell, vessel-speed, and source-destination patterns.
+    \item Compared Linear Regression, Decision Tree Regressor, and Gradient Boosting Regressor using MAE, MSE, and R-squared, and translated findings into stakeholder-facing analytics views.
+\end{itemize}
+
+\projectHeading
+{Android Malware Detection using Machine Learning}
+{https://github.com/veera491/android-malware-detection-ml}
+{Python, Scikit-learn, SVM, Random Forest, KNN, Cybersecurity}
+\begin{itemize}
+    \item Compared Decision Tree, Random Forest, SVM, and KNN classifiers for Android malware detection using accuracy, precision, recall, F1-score, AUC-ROC, and statistical significance testing.
+    \item Identified SVM as the strongest overall model, reaching 97.11\% accuracy and leading F1-score and AUC-ROC performance, while Random Forest achieved the highest precision.
+\end{itemize}
+
+\projectHeading
+{Cloud-Based Brain Stroke Detection}
+{https://github.com/veera491/cloud-brain-stroke-detection-flask-aws}
+{Python, Flask, Docker, AWS ECR/ECS, Cloud Monitoring}
+\begin{itemize}
+    \item Developed and containerized a Flask-based brain-stroke detection application, pushed the Docker image to AWS ECR, and deployed it through AWS ECS.
+    \item Monitored CPU and memory utilisation through AWS metrics and documented the end-to-end cloud deployment workflow.
+\end{itemize}
+
+% ---------- Research & Publications ----------
+\section{Research \& Publications}
+
+\noindent
+\textbf{Scaling Distributed Inference of BLOOMZ-560M Lightweight Large Language Models using Petals Tool}
+\hfill \href{https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A2052191}{Publication}\\
+\textit{Master's Thesis, Blekinge Institute of Technology, 2026}
+\begin{itemize}
+    \item Analysed distributed LLM inference across 1--10 Azure VM nodes using 42,989 prompts and sequential, pipelined, and microbatched execution strategies.
+    \item Identified pipelined execution as the strongest scaling strategy with approximately 1.6$\times$ mean speedup at 10 nodes, while observing a 13$\times$ increase in network footprint.
+\end{itemize}
+
+\noindent
+\textbf{Predicting Risk Level in Life Insurance Application}
+\hfill \href{https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1784294}{Publication}\\
+\textit{Bachelor's Thesis, Blekinge Institute of Technology, 2023}
+\begin{itemize}
+    \item Compared Logistic Regression, Decision Tree, Random Forest, and Linear SVC on unmodified and modified life-insurance datasets using accuracy, precision, recall, and F1-score.
+    \item Identified Random Forest as the strongest classifier with 53.79\% accuracy on the unmodified dataset and 52.80\% on the modified dataset.
+\end{itemize}
+
+% ---------- Education ----------
+\section{Education}
+
+\educationHeading
+{Blekinge Institute of Technology}
+{Karlskrona, Sweden}
+{Master of Science in Computer Science \textit{-- 50\% tuition scholarship based on academic merit}}
+{Aug 2023 -- May 2026}
+
+\vspace{3pt}
+
+\educationHeading
+{Jawaharlal Nehru Technological University Kakinada}
+{Kakinada, India}
+{Bachelor of Technology in Computer Science and Engineering}
+{Aug 2019 -- Jun 2023}
+
+% ---------- Certifications ----------
+\section{Selected Certifications}
+\begin{tabularx}{\textwidth}{X r}
+\textbf{Machine Learning} & Coursera \\
+\textbf{Programming, Data Structures and Algorithms using Python} & NPTEL \\
+\textbf{Python (Basic) Skill Assessment} & HackerRank \\
+\textbf{Machine Learning to Deep Learning: Remote Sensing Data Classification} & IIRS / ISRO \\
+\end{tabularx}
+
+% ---------- Honors & Achievements ----------
+\section{Honors \& Achievements}
+\begin{itemize}
+    \item Secured 2nd rank at college level in the Scaler Edge Apex 2021 Hackathon.
+    \item Earned 6-star HackerRank recognition in Problem Solving and Python Programming.
+\end{itemize}
+
+\end{document}
