@@ -1,0 +1,26 @@
+export type ProjectViewModel = {
+  id: string;
+  itemType: "featured" | "standard";
+  order: number;
+  title: string;
+  slug: string;
+  category?: string;
+  summary?: string;
+  shortDescription?: string;
+  status?: string;
+  role?: string;
+  problem?: string;
+  motivation?: string;
+  methodology?: string;
+  dataset?: string;
+  dataScale?: string;
+  technologies: readonly string[];
+  metrics: readonly string[];
+  results: readonly string[];
+  images: readonly string[];
+  diagrams: readonly string[];
+  coverImage?: string;
+  githubUrl?: string;
+  publicationUrl?: string;
+  demoUrl?: string;
+};
