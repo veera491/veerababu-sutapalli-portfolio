@@ -1,7 +1,6 @@
 import 'server-only';
 import { Metadata } from 'next';
 import { parseCsv } from './csv/parser';
-import { assetExists } from './assets/manifest';
 
 export async function generateSiteMetadata(): Promise<Metadata> {
   const { content } = await parseCsv();

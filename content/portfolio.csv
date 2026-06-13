@@ -39,8 +39,10 @@ navigation,contact,link,target,#contact,6,2,true
 hero,settings,setting,cinematic_enabled,false,1,1,true
 hero,settings,setting,frame_count,60,1,2,true
 hero,settings,setting,frame_path,assets/hero/sequence/frame_{index}.webp,1,3,true
-hero,settings,setting,static_image,assets/profile/hero-portrait.webp,1,4,true
+hero,settings,setting,static_image,/assets/profile/hero-portrait.webp,1,4,true
 hero,settings,setting,scroll_height,500vh,1,5,true
+hero,settings,setting,mobile_image,/assets/profile/hero-portrait-mobile.webp,1,6,true
+hero,settings,setting,portrait_alt,Portrait of VEERABABU SUTAPALLI,1,7,true
 
 hero,phase_1,phase,text,VEERA.,2,1,true
 hero,phase_2,phase,eyebrow,Machine Learning · GenAI · Data Engineering,3,1,true
