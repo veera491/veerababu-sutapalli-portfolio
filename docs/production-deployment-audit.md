@@ -166,7 +166,9 @@ Committed assets:
 
 ## Deployment Commit SHA
 
-Determined at push time. See `git log -1` after committing.
+`1ed3ef41d870b7eeaac329f72e8831304489685a`
+
+Pushed to `origin/main` on 2026-06-15.
 
 ---
 
