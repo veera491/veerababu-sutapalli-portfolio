@@ -6,6 +6,10 @@ import { generateSiteMetadata } from '@/lib/metadata';
 import { getThemeTokens, generateThemeVariables } from '@/lib/theme';
 import { PageShell } from '@/components/layout/page-shell';
 import { SiteHeader } from '@/components/navigation/site-header';
+import { SiteFooter } from '@/components/layout/site-footer';
+import { JsonLd } from '@/components/seo/json-ld';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -35,9 +39,14 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased selection:bg-[var(--color-accent)] selection:text-[var(--color-accent-contrast)]`}
         style={themeVariables}
       >
-        <PageShell header={<SiteHeader />}>
+        <JsonLd />
+        <PageShell header={<SiteHeader />} footer={<SiteFooter />}>
           {children}
         </PageShell>
+        {/* Vercel Analytics — collects page view events; dashboard activation required in Vercel project */}
+        <Analytics />
+        {/* Vercel Speed Insights — collects Core Web Vitals; dashboard activation required in Vercel project */}
+        <SpeedInsights />
       </body>
     </html>
   );

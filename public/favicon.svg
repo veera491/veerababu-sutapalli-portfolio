@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <title>Veerababu Sutapalli Logo</title>
+  <style>
+    .accent { fill: #ff6b35; }
+    .muted { fill: #a3a3a3; }
+    .line { stroke: #ff6b35; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: 0.8; }
+    .line-subtle { stroke: #3a3a3a; stroke-width: 1.5; stroke-linecap: round; }
+  </style>
+  <!-- Background transparent -->
+  <rect width="100%" height="100%" fill="none"/>
+  
+  <!-- Stylized circuit nodes forming a V and S shape -->
+  <!-- Subtle back grid lines -->
+  <line x1="4" y1="16" x2="28" y2="16" class="line-subtle" />
+  <line x1="16" y1="4" x2="16" y2="28" class="line-subtle" />
+  
+  <!-- Initials VS nodes path -->
+  <!-- V Shape: Nodes at (6,8) -> (16,26) -> (26,8) -->
+  <path d="M 6 8 L 16 26 L 26 8" fill="none" class="line" />
+  
+  <!-- S Shape overlaid: Nodes at (26,10) -> (16,10) -> (10,16) -> (22,20) -> (6,24) -->
+  <path d="M 24 12 L 18 10 A 4 4 0 0 0 10 14 A 4 4 0 0 0 16 18 A 4 4 0 0 1 22 22 A 4 4 0 0 1 14 26 L 8 24" fill="none" stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Accent Nodes -->
+  <circle cx="6" cy="8" r="2.5" class="accent" />
+  <circle cx="26" cy="8" r="2.5" class="accent" />
+  <circle cx="16" cy="26" r="3" class="accent" />
+</svg>

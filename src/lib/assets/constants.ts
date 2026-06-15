@@ -1,6 +1,6 @@
 export const ASSET_FALLBACKS: Record<string, string> = {
-  project: '/assets/placeholders/project-cover.svg',
-  publication: '/assets/placeholders/research-cover.svg',
+  project: '/assets/projects/fallback-cover.svg',
+  publication: '/assets/projects/fallback-cover.svg',
   diagram: '/assets/placeholders/system-diagram.svg',
   application: '/assets/placeholders/application-cover.svg',
   education: '/assets/placeholders/education-cover.svg',

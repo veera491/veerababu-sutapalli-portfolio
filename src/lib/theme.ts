@@ -42,7 +42,7 @@ export function generateThemeVariables(tokens: ThemeTokens): React.CSSProperties
     '--color-border': 'color-mix(in srgb, var(--color-text) 12%, transparent)',
     '--color-border-strong': 'color-mix(in srgb, var(--color-text) 24%, transparent)',
     '--color-accent-soft': 'color-mix(in srgb, var(--color-accent) 15%, transparent)',
-    '--color-accent-contrast': '#ffffff',
+    '--color-accent-contrast': tokens.background,
     '--color-focus-ring': 'color-mix(in srgb, var(--color-accent) 60%, transparent)',
   } as React.CSSProperties;
 }

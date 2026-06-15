@@ -8,9 +8,10 @@ export interface ProjectMediaProps {
   alt: string;
   category: AssetCategory;
   className?: string;
+  priority?: boolean;
 }
 
-export function ProjectMedia({ src, alt, category, className = '' }: ProjectMediaProps) {
+export function ProjectMedia({ src, alt, category, className = '', priority = false }: ProjectMediaProps) {
   const finalSrc = getAssetOrFallback(src || '', category);
   
   return (
@@ -21,6 +22,7 @@ export function ProjectMedia({ src, alt, category, className = '' }: ProjectMedi
         src={finalSrc} 
         alt={alt} 
         fill 
+        priority={priority}
         className="object-cover relative z-10"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />

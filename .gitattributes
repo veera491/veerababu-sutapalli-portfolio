@@ -1,0 +1,16 @@
+# Set default behavior to auto normalize line endings
+* text=auto
+
+# Binary files — no whitespace normalization
+*.png binary
+*.webp binary
+*.svg -whitespace
+*.md -whitespace
+
+# Script indentation style
+*.mjs text
+*.ts text
+*.tsx text
+*.css text
+*.json text
+*.yml text

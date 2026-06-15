@@ -35,7 +35,7 @@ export function SectionShell({
               {eyebrow}
             </span>
           )}
-          <h2 id={`${id}-heading`} className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-[var(--color-text)] mb-4">
+          <h2 id={`${id}-heading`} className="text-clamp-h2 font-semibold tracking-tight text-[var(--color-text)] mb-4">
             {title}
           </h2>
           {description && (

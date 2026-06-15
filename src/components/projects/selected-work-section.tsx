@@ -28,8 +28,8 @@ export function SelectedWorkSection({ projects }: SelectedWorkSectionProps) {
           <div className="mb-16 md:mb-24">
             <h3 className="sr-only">Featured Projects</h3>
             <div className="flex flex-col">
-              {featured.map(project => (
-                <FeaturedProjectCard key={project.id} project={project} />
+              {featured.map((project, index) => (
+                <FeaturedProjectCard key={project.id} project={project} priority={index === 0} />
               ))}
             </div>
           </div>

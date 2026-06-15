@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <title>Portfolio Project Visual</title>
+  <desc>Abstract technical visualization matching the portfolio's cinematic system design.</desc>
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="50%" stop-color="#0e0e0e"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+    
+    <!-- Accent Glow -->
+    <radialGradient id="accent-glow" cx="80%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#ff6b35" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#ff6b35" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#ff6b35" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Fine Grid -->
+    <pattern id="fine-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.02"/>
+    </pattern>
+    
+    <!-- Bold Grid -->
+    <pattern id="bold-grid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <!-- Base Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  
+  <!-- Subtle Ambient Glow -->
+  <rect width="100%" height="100%" fill="url(#accent-glow)"/>
+  
+  <!-- Technical Grids -->
+  <rect width="100%" height="100%" fill="url(#fine-grid)"/>
+  <rect width="100%" height="100%" fill="url(#bold-grid)"/>
+
+  <!-- Minimal Corner Markings -->
+  <g stroke="#ff6b35" stroke-width="1.5" opacity="0.3" fill="none">
+    <path d="M 30 50 L 30 30 L 50 30" />
+    <path d="M 770 50 L 770 30 L 750 30" />
+    <path d="M 30 400 L 30 420 L 50 420" />
+    <path d="M 770 400 L 770 420 L 750 420" />
+  </g>
+
+  <!-- Technical Overlay Elements -->
+  <g opacity="0.15">
+    <line x1="30" y1="225" x2="770" y2="225" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="4 8"/>
+    <line x1="400" y1="30" x2="400" y2="420" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="4 8"/>
+    <circle cx="400" cy="225" r="80" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+    <circle cx="400" cy="225" r="140" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2 4"/>
+  </g>
+
+  <!-- Decorative Dial / Crosshair -->
+  <g transform="translate(400, 225)" stroke="#ff6b35" fill="none" opacity="0.4">
+    <circle cx="0" cy="0" r="4" fill="#ff6b35"/>
+    <path d="M -15 0 L -8 0 M 8 0 L 15 0 M 0 -15 L 0 -8 M 0 8 L 0 15" stroke-width="1"/>
+  </g>
+
+  <!-- Technical Code / Coordinate Text (Bottom Right) -->
+  <text x="760" y="410" font-family="monospace" font-size="10" fill="#a3a3a3" opacity="0.4" text-anchor="end" letter-spacing="1">SYS.LOC: //PORTFOLIO/GENERIC_FLBK</text>
+</svg>

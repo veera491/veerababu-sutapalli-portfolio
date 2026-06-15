@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <title>Customer Churn Prediction — KKBox</title>
+  <desc>Technical visualization of cohort retention curves and subscription lifetime decay.</desc>
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#121212"/>
+    </linearGradient>
+    
+    <radialGradient id="accent-glow" cx="90%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#ff6b35" stop-opacity="0.08"/>
+      <stop offset="80%" stop-color="#ff6b35" stop-opacity="0.01"/>
+      <stop offset="100%" stop-color="#ff6b35" stop-opacity="0"/>
+    </radialGradient>
+
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.02"/>
+    </pattern>
+
+    <!-- Curve Gradients -->
+    <linearGradient id="active-curve-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#ff6b35" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background & Grid -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)"/>
+  <rect width="100%" height="100%" fill="url(#accent-glow)"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- Border -->
+  <rect x="30" y="30" width="740" height="390" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.05"/>
+
+  <!-- Graph Axes -->
+  <line x1="80" y1="360" x2="720" y2="360" stroke="#ffffff" stroke-width="1" stroke-opacity="0.1"/>
+  <line x1="80" y1="80" x2="80" y2="360" stroke="#ffffff" stroke-width="1" stroke-opacity="0.1"/>
+
+  <!-- Cohort Retention Uncertainty Band -->
+  <path d="M 80 120 Q 240 180 400 290 T 720 340 L 720 360 L 80 360 Z" fill="#ff6b35" fill-opacity="0.02"/>
+  <path d="M 80 100 Q 240 150 400 260 T 720 310 L 720 360 L 80 360 Z" fill="#ffffff" fill-opacity="0.01"/>
+
+  <!-- Active Cohort Curve (Retention) -->
+  <path d="M 80 110 Q 240 165 400 275 T 720 325" fill="none" stroke="url(#active-curve-grad)" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Baseline/Null Hypothesis Curve -->
+  <path d="M 80 110 Q 200 220 400 310 T 720 350" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.15" stroke-dasharray="4 6"/>
+
+  <!-- Vertical evaluation steps / time horizons -->
+  <g stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.1" stroke-dasharray="2 2">
+    <line x1="240" y1="80" x2="240" y2="360"/>
+    <line x1="400" y1="80" x2="400" y2="360"/>
+    <line x1="560" y1="80" x2="560" y2="360"/>
+  </g>
+
+  <!-- Interactive nodes along decay curve -->
+  <g fill="#ff6b35" opacity="0.8">
+    <circle cx="240" cy="165" r="4"/>
+    <circle cx="400" cy="275" r="4"/>
+  </g>
+  <g fill="#ffffff" opacity="0.5">
+    <circle cx="560" cy="312" r="3"/>
+  </g>
+
+  <!-- Highlight box at Churn inflection point -->
+  <g transform="translate(400, 275)">
+    <rect x="-60" y="-40" width="120" height="30" fill="#050505" fill-opacity="0.6" stroke="#ff6b35" stroke-width="0.5" stroke-opacity="0.3"/>
+    <text x="0" y="-20" font-family="monospace" font-size="8" fill="#ff6b35" text-anchor="middle" letter-spacing="0.5">INFLECTION: t+30d</text>
+  </g>
+
+  <!-- Audio Waveform abstraction fading (subscription context) -->
+  <g transform="translate(480, 100)" stroke="#ffffff" stroke-opacity="0.1" fill="none">
+    <path d="M 0 30 L 10 10 L 20 50 L 30 20 L 40 40 L 50 15 L 60 45 L 70 30" stroke-width="1"/>
+    <path d="M 0 30 Q 35 0 70 30" stroke-width="0.5" stroke-dasharray="2 2"/>
+    <text x="35" y="60" font-family="monospace" font-size="8" fill="#a3a3a3" text-anchor="middle" letter-spacing="1">USER_STREAM_SIGNAL</text>
+  </g>
+
+  <!-- Grid Labels -->
+  <text x="75" y="375" font-family="monospace" font-size="8" fill="#a3a3a3" opacity="0.5">t=0</text>
+  <text x="240" y="375" font-family="monospace" font-size="8" fill="#a3a3a3" opacity="0.5" text-anchor="middle">t+15</text>
+  <text x="400" y="375" font-family="monospace" font-size="8" fill="#a3a3a3" opacity="0.5" text-anchor="middle">t+30</text>
+  <text x="560" y="375" font-family="monospace" font-size="8" fill="#a3a3a3" opacity="0.5" text-anchor="middle">t+45</text>
+  <text x="720" y="375" font-family="monospace" font-size="8" fill="#a3a3a3" opacity="0.5" text-anchor="end">t+60 (DAYS)</text>
+
+  <!-- Metadata -->
+  <text x="50" y="60" font-family="monospace" font-size="10" fill="#a3a3a3" opacity="0.4" letter-spacing="1">MODEL: GRADIENT_BOOSTING / TARGET: CHURN_PROBABILITY</text>
+  <text x="750" y="60" font-family="monospace" font-size="10" fill="#a3a3a3" opacity="0.4" text-anchor="end" letter-spacing="1">SYS.LOC: //ML/KKBOX_CHURN</text>
+</svg>

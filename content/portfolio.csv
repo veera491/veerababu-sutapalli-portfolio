@@ -117,6 +117,7 @@ project,life_insurance_risk_prediction,featured,technology,Decision Tree,3,8,tru
 project,life_insurance_risk_prediction,featured,technology,Random Forest,3,9,true
 project,life_insurance_risk_prediction,featured,technology,Linear SVC,3,10,true
 project,life_insurance_risk_prediction,featured,publication_url,https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1784294,3,1,true
+project,life_insurance_risk_prediction,featured,cover_image,/assets/projects/life-insurance-risk-prediction/cover.svg,3,1,true
 
 project,distributed_llm_inference_petals,featured,title,Scaling Distributed Inference of BLOOMZ-560M using Petals,1,1,true
 project,distributed_llm_inference_petals,featured,slug,distributed-llm-inference-bloomz-petals,1,2,true
@@ -132,6 +133,8 @@ project,distributed_llm_inference_petals,featured,technology,Python,1,1,true
 project,distributed_llm_inference_petals,featured,technology,Hugging Face Transformers,1,2,true
 project,distributed_llm_inference_petals,featured,technology,Petals,1,3,true
 project,distributed_llm_inference_petals,featured,technology,BLOOMZ-560M,1,4,true
+project,distributed_llm_inference_petals,featured,cover_image,/assets/projects/distributed-llm-inference-bloomz-petals/cover.webp,1,1,true
+
 
 project,ai_generated_review_detection,featured,title,AI-Generated Review Detection,2,1,true
 project,ai_generated_review_detection,featured,slug,ai-generated-review-detection,2,2,true
@@ -148,6 +151,7 @@ project,ai_generated_review_detection,featured,technology,scikit-learn,2,3,true
 project,ai_generated_review_detection,featured,technology,Natural Language Processing,2,4,true
 project,ai_generated_review_detection,featured,technology,Text Classification,2,5,true
 project,ai_generated_review_detection,featured,github_url,https://github.com/veera491/ai-generated-review-detection,2,1,true
+project,ai_generated_review_detection,featured,cover_image,/assets/projects/ai-generated-review-detection/cover.webp,2,1,true
 
 project,port_efficiency_decision_support,standard,title,Decision Support System for Port Efficiency Analysis,4,1,true
 project,port_efficiency_decision_support,standard,slug,port-efficiency-decision-support-system,4,2,true
@@ -172,6 +176,7 @@ project,port_efficiency_decision_support,standard,technology,Jinja,4,7,true
 project,port_efficiency_decision_support,standard,technology,Machine Learning,4,8,true
 project,port_efficiency_decision_support,standard,technology,Data Visualization,4,9,true
 project,port_efficiency_decision_support,standard,github_url,https://github.com/veera491/port-efficiency-decision-support-system,4,1,true
+project,port_efficiency_decision_support,standard,cover_image,/assets/projects/port-efficiency-decision-support-system/cover.svg,4,1,true
 
 project,kkbox_customer_churn_prediction,standard,title,Customer Churn Prediction — KKBox,5,1,true
 project,kkbox_customer_churn_prediction,standard,slug,kkbox-customer-churn-prediction,5,2,true
@@ -186,6 +191,7 @@ project,kkbox_customer_churn_prediction,standard,technology,pandas,5,2,true
 project,kkbox_customer_churn_prediction,standard,technology,scikit-learn,5,3,true
 project,kkbox_customer_churn_prediction,standard,technology,Machine Learning,5,4,true
 project,kkbox_customer_churn_prediction,standard,github_url,https://github.com/veera491/customer-churn-prediction-kkbox,5,1,true
+project,kkbox_customer_churn_prediction,standard,cover_image,/assets/projects/kkbox-customer-churn-prediction/cover.svg,5,1,true
 
 project,android_malware_detection,standard,title,Android Malware Detection using Machine Learning,6,1,true
 project,android_malware_detection,standard,slug,android-malware-detection-machine-learning,6,2,true
@@ -199,6 +205,7 @@ project,android_malware_detection,standard,technology,Machine Learning,6,2,true
 project,android_malware_detection,standard,technology,Android Security,6,3,true
 project,android_malware_detection,standard,technology,Classification,6,4,true
 project,android_malware_detection,standard,github_url,https://github.com/veera491/android-malware-detection-ml,6,1,true
+project,android_malware_detection,standard,cover_image,/assets/projects/android-malware-detection-machine-learning/cover.svg,6,1,true
 
 project,cloud_brain_stroke_detection,standard,title,Cloud-Based Brain Stroke Detection,7,1,true
 project,cloud_brain_stroke_detection,standard,slug,cloud-based-brain-stroke-detection,7,2,true
@@ -212,6 +219,7 @@ project,cloud_brain_stroke_detection,standard,technology,Flask,7,2,true
 project,cloud_brain_stroke_detection,standard,technology,Machine Learning,7,3,true
 project,cloud_brain_stroke_detection,standard,technology,AWS,7,4,true
 project,cloud_brain_stroke_detection,standard,github_url,https://github.com/veera491/cloud-brain-stroke-detection-flask-aws,7,1,true
+project,cloud_brain_stroke_detection,standard,cover_image,/assets/projects/cloud-based-brain-stroke-detection/cover.svg,7,1,true
 
 project,pin_your_spot,standard,title,Pin Your Spot,8,1,true
 project,pin_your_spot,standard,slug,pin-your-spot-mobile-application,8,2,true
@@ -223,6 +231,7 @@ project,pin_your_spot,standard,role,Mobile Application Developer,8,7,true
 project,pin_your_spot,standard,technology,Mobile Development,8,1,true
 project,pin_your_spot,standard,technology,Location Services,8,2,true
 project,pin_your_spot,standard,github_url,https://github.com/veera491/pin-your-spot-mobile-app,8,1,true
+project,pin_your_spot,standard,cover_image,/assets/projects/pin-your-spot-mobile-application/cover.svg,8,1,true
 
 project,bilteam_car_auction_marketplace,standard,title,BilTeam Car Auction Marketplace,9,1,false
 project,bilteam_car_auction_marketplace,standard,slug,bilteam-car-auction-marketplace,9,2,false

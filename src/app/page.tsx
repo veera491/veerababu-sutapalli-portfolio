@@ -1,6 +1,12 @@
 import { getSection } from '@/lib/csv/repository';
 import { HeroSection } from '@/components/hero/hero-section';
+import { AboutSection } from '@/components/about/about-section';
+import { CapabilitiesSection } from '@/components/capabilities/capabilities-section';
 import { SelectedWorkSection } from '@/components/projects/selected-work-section';
+import { ResearchSection } from '@/components/research/research-section';
+import { ExperienceSection } from '@/components/experience/experience-section';
+import { EducationSection } from '@/components/education/education-section';
+import { ContactSection } from '@/components/contact/contact-section';
 import { toProjectViewModel } from '@/components/projects/project-view-model';
 
 export default async function Home() {
@@ -14,7 +20,13 @@ export default async function Home() {
   return (
     <>
       <HeroSection />
+      <AboutSection />
+      <CapabilitiesSection />
       <SelectedWorkSection projects={enabledProjects} />
+      <ResearchSection />
+      <ExperienceSection />
+      <EducationSection />
+      <ContactSection />
     </>
   );
 }

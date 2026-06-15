@@ -9,7 +9,7 @@ export function SectionHeading({ children, as = 'h2', className = '', ...props }
   const Component = as;
   return (
     <Component 
-      className={`text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-[var(--color-text)] mb-4 ${className}`}
+      className={`text-clamp-h2 font-semibold tracking-tight text-[var(--color-text)] mb-4 ${className}`}
       {...props}
     >
       {children}

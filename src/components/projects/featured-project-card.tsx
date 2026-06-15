@@ -6,7 +6,7 @@ import { ProjectMetrics } from './project-metrics';
 import { ProjectTechnologies } from './project-technologies';
 import { ProjectLinks } from './project-links';
 
-export function FeaturedProjectCard({ project }: { project: ProjectViewModel }) {
+export function FeaturedProjectCard({ project, priority = false }: { project: ProjectViewModel; priority?: boolean }) {
   // Use 'publication' category fallback for research-oriented projects if needed
   const mediaCategory = project.publicationUrl ? 'publication' : 'project';
 
@@ -18,6 +18,7 @@ export function FeaturedProjectCard({ project }: { project: ProjectViewModel }) 
           alt={`Visual representation of ${project.title}`} 
           category={mediaCategory} 
           className="h-full"
+          priority={priority}
         />
       </div>
       <div className="w-full lg:w-1/2 p-6 md:p-10 flex flex-col justify-between">
