@@ -293,3 +293,111 @@ Live URL, local setup, verification commands, deployment model.
 - Push to `main` → Vercel auto-deploy
 - Live URL: `https://veerababu-sutapalli.vercel.app`
 - Required env: `NEXT_PUBLIC_SITE_URL=https://veerababu-sutapalli.vercel.app`
+
+---
+
+# Step 12: Reference Fidelity, 3D Art Direction, Technical Architecture, and Performance Budget
+
+## Summary
+
+Step 12 completed the planning, reference, architecture, performance, accessibility, and testing documentation needed before any 3D implementation begins. No production UI code was changed, and Step 13 was not started.
+
+## Recovery and Git Safety
+
+- Confirmed `main` was synchronized with `origin/main` before beginning Step 12.
+- Confirmed the working tree was clean except for an ignored Playwright state artifact.
+- Removed the ignored `test-results/.last-run.json` artifact so local generated state would not affect verification.
+- Confirmed `git stash list` was empty.
+- Created a local safety branch: `backup/pre-step-12-3d-direction`.
+- Did not amend pushed commits, force-push, reset hard, or drop any stash.
+
+## Reference Fidelity Audit
+
+No user-supplied external 3D reference URLs, screenshots, recordings, or mood boards were present in the repository or attachment context. Step 12 therefore does not claim close visual fidelity to an external reference.
+
+Documentation added:
+
+- `docs/reference-inputs-needed.md`
+- `docs/3d-redesign/reference-fidelity-audit.md`
+
+The selected approach is to start from existing portfolio content, committed project assets, the live site baseline, and primary technical documentation. The next implementation step should pause for user reference material if exact art-match fidelity becomes required.
+
+## Production Baseline Capture
+
+Captured the current live production site at `https://veerababu-sutapalli.vercel.app` before defining the 3D direction.
+
+Baseline screenshots:
+
+- `docs/3d-redesign/baseline/initial-390x844.png`
+- `docs/3d-redesign/baseline/initial-768x1024.png`
+- `docs/3d-redesign/baseline/initial-1440x900.png`
+- `docs/3d-redesign/baseline/initial-1920x1080.png`
+- `docs/3d-redesign/baseline/full-home-390x844.png`
+- `docs/3d-redesign/baseline/full-home-768x1024.png`
+- `docs/3d-redesign/baseline/full-home-1440x900.png`
+- `docs/3d-redesign/baseline/full-home-1920x1080.png`
+- `docs/3d-redesign/baseline/mobile-navigation-390x844.png`
+- `docs/3d-redesign/baseline/projects-1440x900.png`
+- `docs/3d-redesign/baseline/experience-1440x900.png`
+- `docs/3d-redesign/baseline/research-1440x900.png`
+- `docs/3d-redesign/baseline/contact-footer-1440x900.png`
+
+## Lighthouse Baseline
+
+Step 12 reused the committed Step 11 Lighthouse reports as the performance baseline:
+
+- Mobile: Performance 38, Accessibility 98, Best Practices 96, SEO 100, Agentic Browsing 100
+- Desktop: Performance 44, Accessibility 98, Best Practices 96, SEO 100, Agentic Browsing 100
+
+Key constraints carried into the 3D plan:
+
+- Preserve CLS at 0.
+- Do not worsen already-low Lighthouse performance.
+- Keep WebGL and animation code isolated from the production homepage until a measured prototype passes its gates.
+- Treat TBT and main-thread cost as the main risks for any 3D addition.
+
+## Concept Decision
+
+Three visual directions were evaluated:
+
+- Concept A: Neural Intelligence Core
+- Concept B: AI Engineering Laboratory
+- Concept C: Data Universe
+
+Concept A, Neural Intelligence Core, was selected because it best matches the AI/ML portfolio theme, can be built procedurally without unlicensed assets, and supports progressive enhancement from static fallback to full WebGL.
+
+## Documentation Added
+
+- `docs/3d-redesign/art-direction.md`
+- `docs/3d-redesign/experience-journey.md`
+- `docs/3d-redesign/technical-architecture.md`
+- `docs/3d-redesign/performance-budget.md`
+- `docs/3d-redesign/accessibility-and-fallbacks.md`
+- `docs/3d-redesign/asset-plan.md`
+- `docs/3d-redesign/testing-strategy.md`
+- `docs/3d-redesign/step-13-build-spec.md`
+
+## Step 13 Boundary
+
+The next implementation step must build an isolated prototype route, not replace the current production homepage.
+
+Required Step 13 direction:
+
+- Add `/3d-lab` as an isolated prototype route.
+- Use the Neural Intelligence Core direction.
+- Start with procedural geometry, particles, lines, and shader-lightweight materials.
+- Use `three` plus `@react-three/fiber@9` as the smallest viable 3D stack for the React 19 / Next.js 16 project.
+- Prefer native scroll state and IntersectionObserver for the first prototype.
+- Defer GSAP, Lenis, Theatre.js, heavy postprocessing, sound, and production homepage replacement.
+- Include accessible static fallback and reduced-motion behavior from the first implementation.
+
+## Step 12 Validation Results
+
+- Conflict marker scan: passed.
+- `git diff --check`: passed.
+- `npm run lint`: passed.
+- `npx tsc --noEmit`: passed.
+- `npm run verify:project-assets`: passed; 8 project cover assets verified.
+- `npm run verify:seo`: passed.
+
+Step 12 changed documentation and evidence only. No source code, package, dependency, or production homepage implementation changes were made.

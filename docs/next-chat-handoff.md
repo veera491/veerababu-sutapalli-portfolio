@@ -1,7 +1,7 @@
 # Next-Chat Handoff — Veerababu Sutapalli Cinematic AI/ML Portfolio
 
-**Prepared:** 2026-06-15 (Step 11)  
-**Status:** Step 11 complete — production deployed, verified, and Lighthouse-audited
+**Prepared:** 2026-06-16 (Step 12)  
+**Status:** Step 12 complete — cinematic 3D direction documented; Step 13 not started
 
 ---
 
@@ -83,6 +83,16 @@ GitHub: `https://github.com/veera491/veerababu-sutapalli-portfolio`
 - `README.md` — production section
 - `docs/production-deployment-audit.md` — full audit document
 
+### Step 12 — Reference Fidelity, 3D Art Direction, Technical Architecture, and Performance Budget
+- Confirmed Git recovery remained clean and synchronized before starting Step 12.
+- Created local backup branch `backup/pre-step-12-3d-direction`.
+- Confirmed no user-supplied external 3D references were present; documented missing reference inputs.
+- Captured production baseline screenshots across mobile, tablet, desktop, and wide desktop.
+- Reused committed Lighthouse mobile and desktop reports as the performance baseline.
+- Evaluated three 3D concepts and selected **Neural Intelligence Core**.
+- Documented the art direction, experience journey, technical architecture, performance budget, accessibility/fallback model, asset plan, testing strategy, and Step 13 build specification.
+- Kept Step 12 documentation-only: no production homepage replacement and no `/3d-lab` implementation yet.
+
 ---
 
 ## Current Architecture
@@ -97,6 +107,7 @@ GitHub: `https://github.com/veera491/veerababu-sutapalli-portfolio`
 - **Analytics:** `@vercel/analytics` + `@vercel/speed-insights` (code integrated)
 - **CI:** GitHub Actions (`.github/workflows/portfolio-ci.yml`)
 - **Deployment:** Vercel Git integration (auto on push to `main`)
+- **3D planning:** Step 12 documents an isolated future `/3d-lab` prototype; no 3D production route exists yet
 
 ---
 
@@ -130,6 +141,7 @@ npm run verify:live
 npm run test:e2e:live
 
 # Lighthouse reports are committed in docs/lighthouse/
+# Step 12 baseline screenshots are committed in docs/3d-redesign/baseline/
 
 # Individual tools
 npm run verify:project-assets
@@ -161,11 +173,22 @@ npm run build:icons
 
 ## Verification Snapshot
 
-Latest verification completed on 2026-06-15:
+Latest Step 12 documentation verification completed on 2026-06-16:
 
 | Check | Result |
 |---|---|
-| Git conflict markers / unmerged files | Passed — none found |
+| Git conflict markers | Passed — none found |
+| `git diff --check` | Passed |
+| `npm run lint` | Passed |
+| `npx tsc --noEmit` | Passed |
+| `npm run verify:project-assets` | Passed — 8/8 project cover assets verified |
+| `npm run verify:seo` | Passed |
+| Step 12 generated artifacts | Baseline screenshots committed under `docs/3d-redesign/baseline/` |
+
+Latest Step 11 live production verification completed on 2026-06-15:
+
+| Check | Result |
+|---|---|
 | Recovery stash | Inspected, matched `HEAD`, then dropped |
 | `npm run check:full` | Passed — 17/17 local Playwright tests |
 | `npm run check:production` | Passed — 17/17 production-style Playwright tests |
@@ -211,6 +234,7 @@ These require account-side steps that cannot be automated from this repository:
 6. **Lighthouse performance remediation** — mobile 38 / desktop 44 performance scores need optimization before CI gating
 7. **Lighthouse CI** — not yet integrated as blocking CI step
 8. **Content Security Policy** — deferred; requires auditing all inline scripts, analytics endpoints, font CDNs, and JSON-LD before adding a strict policy
+9. **3D reference inputs** — no external 3D reference screenshots, videos, URLs, or mood boards were found; collect these before promising close visual matching
 
 ---
 
@@ -218,6 +242,8 @@ These require account-side steps that cannot be automated from this repository:
 
 - Single-page portfolio — no internal project-detail routes; each project's deep technical content is not fully presented
 - No downloadable résumé route (résumé path stored in CSV but not served as a route)
+- No 3D route exists yet; Step 12 only defines the direction and guardrails for an isolated `/3d-lab` prototype
+- No exact external 3D reference fidelity target exists yet because no user-supplied references were available
 - Vercel Analytics/Speed Insights collect data only after dashboard activation
 - Lighthouse performance target is not met yet — mobile 38 / desktop 44 on 2026-06-15 audit
 - `build-icons.mjs` uses macOS `sips` — must be run manually on macOS when SVG design changes; generated PNGs are committed to Git
@@ -226,16 +252,16 @@ These require account-side steps that cannot be automated from this repository:
 
 ## Recommended Next Step
 
-### Step 12 — Recruiter Conversion and Project Case-Study Architecture
+### Step 13 — Isolated Neural Intelligence Core Prototype
 
-The portfolio currently presents 8 projects as cards on a single page. To convert recruiters and technical hiring managers, the next step should:
+Do not replace the production homepage at the start of Step 13. Build a measured, isolated `/3d-lab` prototype first.
 
-1. **Internal project-detail routes** — `/projects/[slug]` with rich case study content per project
-2. **Case study structure** — problem statement, approach, technical architecture, implementation highlights, measurable outcomes, tools/stack details
-3. **Downloadable résumé** — validate résumé path from CSV, serve or link to a real PDF, add tracking via Vercel Analytics custom events
-4. **Recruiter navigation** — "Download CV", "Contact", and "View Projects" calls-to-action with clear conversion paths
-5. **Project screenshots** — real project screenshots or demo recordings in project detail pages
-6. **Conversion analytics** — Vercel Analytics custom events for résumé downloads, contact link clicks, project view depth
-7. **Open Graph per-project** — per-route OG metadata for sharable project URLs
+Required Step 13 starting point:
 
-This step will transform the portfolio from a showcase to a conversion tool.
+1. Add `three`, `@types/three`, and `@react-three/fiber@9` only if implementation begins.
+2. Implement `/3d-lab` as an isolated prototype route.
+3. Use the **Neural Intelligence Core** direction from `docs/3d-redesign/art-direction.md`.
+4. Start with procedural assets only: central core geometry, neural line field, limited particle system, and section-state transitions.
+5. Use native scroll state and IntersectionObserver first; defer GSAP, Lenis, Theatre.js, heavy postprocessing, sound, and production homepage replacement.
+6. Implement reduced-motion, WebGL failure, and low-power fallbacks from the first prototype.
+7. Pass the budgets and gates in `docs/3d-redesign/performance-budget.md` and `docs/3d-redesign/testing-strategy.md` before considering homepage integration.
