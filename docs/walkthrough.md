@@ -436,3 +436,48 @@ We have successfully completed all parts of Step 13. Below is a detailed summary
 - **Screenshot Evidence:** 10 viewport capture pngs saved under `docs/3d-redesign/step-13-evidence/`.
 - **Results Documentation:** Full metrics registered in `docs/3d-redesign/step-13-prototype-results.md`.
 
+---
+
+## Step 13B: Performance Evidence Repair, Mobile Import Gating, and Dedicated Live Validation Walkthrough
+
+We have successfully completed all parts of Step 13B. Below is a detailed summary of the gating implementation, security adjustments, and audit corrections.
+
+### Changes Implemented
+
+1. **Strict Dynamic Import Gating Wrapper**:
+   - Hardened [DynamicCanvasWrapper.client.tsx](file:///Users/veera/Documents/veerababu-sutapalli-portfolio/src/components/3d/canvas/DynamicCanvasWrapper.client.tsx) to prevent the dynamic import of the canvas chunk for ineligible devices.
+   - Defer-mounted the wrapper by 10ms to let capability checks evaluate.
+   - Restrained mounting of the `@react-three/fiber` `<Canvas>` component to eligible desktop clients (Tier A).
+   - Rendered the static fallback poster directly inside a diagnostic container for optimized mobile/tablet (Tier B) and reduced motion (Tier C) users, ensuring **0 KiB** WebGL script payload is transferred on mobile.
+
+2. **Failure Simulation Hardening**:
+   - Removed production-exposed query parameters for crashing the canvas (`?simulate-3d-error=true`) in [CanvasErrorBoundary.client.tsx](file:///Users/veera/Documents/veerababu-sutapalli-portfolio/src/components/3d/canvas/CanvasErrorBoundary.client.tsx).
+   - Configured `CanvasErrorBoundary` to listen exclusively to a local test-injected global flag (`window.__SIMULATE_3D_ERROR__`), making production error boundary tests secure.
+
+3. **Lighthouse Run Bias Fixes**:
+   - Corrected prior cold-start and JIT compiler run-order bias by running warm-up audits and discarding them.
+   - Implemented an automated alternate run sequence executing 18 local audits across desktop and mobile.
+   - Generated the report summary at [results-summary.md](file:///Users/veera/Documents/veerababu-sutapalli-portfolio/docs/lighthouse/step-13b/results-summary.md).
+
+4. **Playwright Stability Enhancements**:
+   - Split screenshot capture into dedicated smaller tests to prevent VM timeout errors.
+   - Applied `scale: 'css'` and `animations: 'disabled'` to screenshots to reduce raw pixel overhead and prevent headless Chromium GPU helper process crashes.
+   - Enabled local E2E test retries in [playwright.config.ts](file:///Users/veera/Documents/veerababu-sutapalli-portfolio/playwright.config.ts).
+   - Typed page objects (`Page`, `ConsoleMessage`) in specs, removing all `any` lint errors.
+
+5. **Dedicated Live E2E Spec**:
+   - Created [three-d-lab.live.spec.ts](file:///Users/veera/Documents/veerababu-sutapalli-portfolio/tests/e2e/three-d-lab.live.spec.ts) to audit indexing tags (`noindex`), canonical matches (`${liveOrigin}/3d-lab`), Axe wcag2a/wcag2aa regulations, security headers, and gating on live Vercel deployments.
+
+### Verification Results
+
+1. **Entire Local Health Check Pipeline (`npm run check:full`)**:
+   - **Lint & ESLint Checks:** Passed with **0 errors/warnings**.
+   - **TypeScript Types Check:** Passed with **0 errors**.
+   - **Automated Project Cover Checker:** Passed (8/8 covers exist on disk).
+   - **Local E2E Tests:** Passed (30/30 passed).
+   - **Gated Script Audits:** Proved mobile (Tier B) and reduced motion (Tier C) download **0 bytes** of the Three.js/R3F script chunk.
+
+2. **Dedicated Live E2E Tests (`LIVE_BASE_URL=http://localhost:3000 npx playwright test tests/e2e/three-d-lab.live.spec.ts --config=playwright.live.config.ts`)**:
+   - Status: **Passed** (5/5 passed).
+
+

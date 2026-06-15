@@ -26,12 +26,6 @@ export class CanvasErrorBoundary extends Component<Props, State> {
 
   public componentDidMount() {
     if (typeof window !== 'undefined') {
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get('simulate-3d-error') === 'true') {
-        console.warn('Simulating 3D canvas error via query parameter.');
-        this.setState({ hasError: true });
-      }
-
       // Check global flag for testing
       const win = window as unknown as Record<string, boolean>;
       if (win.__SIMULATE_3D_ERROR__) {

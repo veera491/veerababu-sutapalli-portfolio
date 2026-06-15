@@ -4,7 +4,7 @@ const liveBaseUrl = process.env.LIVE_BASE_URL || 'https://veerababu-sutapalli.ve
 
 export default defineConfig({
   testDir: './tests/e2e',
-  testMatch: '**/live-production.spec.ts',
+  testMatch: ['**/live-production.spec.ts', '**/three-d-lab.live.spec.ts'],
   fullyParallel: false,
   forbidOnly: false,
   retries: 1,

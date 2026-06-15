@@ -115,20 +115,14 @@ The client hydration phase runs capability queries to assign one of three device
 ---
 
 ## 12. Lighthouse Incremental Performance Cost
-Audits were run against `/3d-lab` (3D scene active) and `/3d-lab?disable-3d=true` (static baseline).
-
-| Metric | Desktop Baseline | Desktop 3D Lab | Mobile Baseline | Mobile 3D Lab |
-| :--- | :---: | :---: | :---: | :---: |
-| **Performance** | 54 | **91** | 43 | **62** |
-| **Accessibility** | 98 | 98 | 98 | 98 |
-| **Best Practices** | 96 | 96 | 96 | 96 |
-| **SEO** | 69 | 69 | 69 | 69 |
-| **LCP (seconds)** | 1.6 s | **1.0 s** | 6.9 s | **4.0 s** |
-| **CLS** | 0 | 0 | 0 | 0 |
-| **TBT (ms)** | 6,770 ms | **210 ms** | 10,060 ms | **1,460 ms** |
-| **Speed Index** | 6.6 s | **1.0 s** | 5.0 s | **1.4 s** |
-
-*Analysis:* The 3D Lab metrics are notably better than the baseline audits. This is because the dynamic, deferred lazy loading of the canvas allows the main thread to render the semantic HTML framework first without blocking. The baseline run carried initial Next.js start-up/compilation overhead. This verifies that the incremental runtime cost of the 3D prototype on the main thread is minimal.
+> [!WARNING]
+> The performance metrics originally recorded in this section were anomalous and unreliable due to run-order bias and server cold start / JIT compilation latency. The "Baseline" runs were executed while the server was actively compiling the pages for the first time, causing artificial thread blocking.
+>
+> For the corrected, bias-free controlled median audits (obtained using alternating runs and warm-up discards), see the [Step 13B Performance Validation Report](file:///Users/veera/Documents/veerababu-sutapalli-portfolio/docs/3d-redesign/step-13b-performance-validation.md).
+>
+> The corrected medians show that:
+> - **Desktop Static vs 3D:** Performance is identical (~98-99). The incremental cost of the desktop 3D WebGL scene is only **43 ms** of extra JS execution.
+> - **Mobile Gating:** The mobile performance remains completely identical (~77) in both static and production-behavior modes because the dynamic gating successfully prevents any WebGL library downloads or evaluations.
 
 ---
 

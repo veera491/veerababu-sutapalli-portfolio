@@ -1,7 +1,7 @@
 # Next-Chat Handoff — Veerababu Sutapalli Cinematic AI/ML Portfolio
 
-**Prepared:** 2026-06-16 (Step 13)  
-**Status:** Step 13 complete — isolated Neural Intelligence Core 3D prototype built, optimized, and verified; Step 14 not started
+**Prepared:** 2026-06-16 (Step 13B)  
+**Status:** Step 13B complete — Performance Evidence Repair, Mobile Import Gating, and Dedicated Live Validation completed; Step 14 approved for development
 
 
 ---
@@ -104,6 +104,13 @@ GitHub: `https://github.com/veera491/veerababu-sutapalli-portfolio`
 - **Visibility Pauses & Disposal:** Paused rendering when tab is hidden or canvas is off-screen. Disposed geometries and materials.
 - **Playwright Test Validation:** Created `tests/e2e/three-d-lab.spec.ts` covering Axe scans and fallbacks. All 26 E2E tests pass.
 
+### Step 13B — Performance Evidence Repair, Mobile Import Gating, and Dedicated Live Validation
+- **Dynamic Gating wrapper:** Modified `DynamicCanvasWrapper` to prevent mounting `<CinematicCanvas />` and downloading the 3D chunk on mobile/tablet (Tier B) and reduced motion (Tier C). Verified 0 KiB WebGL script transfer on mobile.
+- **Failure Simulation Guard:** Restricted simulated errors to Playwright test init script injection, disabling url-query triggers in production.
+- **Lighthouse Methodology Repair:** Audited the page under strict alternating runs, warm-up discards, and CSS-scaling to eliminate compilation/VM lag bias.
+- **Dedicated Live Tests:** Created `tests/e2e/three-d-lab.live.spec.ts` to verify security headers, indexing rules, Axe compliance, and gating on live Vercel deployments.
+- **Flakiness Mitigation:** Added hardware memory/concurrency overrides and test retries to Playwright config to prevent GPU crashes under headless memory constraints.
+
 ---
 
 ## Current Architecture
@@ -195,12 +202,12 @@ Latest Step 13 verification completed on 2026-06-16:
 | `npx tsc --noEmit` | Passed — 0 compilation errors |
 | `npm run verify:project-assets` | Passed — 8/8 project cover assets verified |
 | `npm run verify:seo` | Passed |
-| `npm run test:e2e` | Passed — 26/26 tests, including new `/3d-lab` route, Axe audits, visibility pausing, fallbacks |
-| `npm run check:full` | Passed |
-| Lighthouse `/3d-lab` Baseline Mobile | Performance 43, Accessibility 98, Best Practices 96, SEO 69, LCP 6.9 s, TBT 10,060 ms |
-| Lighthouse `/3d-lab` 3D Mobile | Performance 62, Accessibility 98, Best Practices 96, SEO 69, LCP 4.0 s, TBT 1,460 ms |
-| Lighthouse `/3d-lab` Baseline Desktop | Performance 54, Accessibility 98, Best Practices 96, SEO 69, LCP 1.6 s, TBT 6,770 ms |
-| Lighthouse `/3d-lab` 3D Desktop | Performance 91, Accessibility 98, Best Practices 96, SEO 69, LCP 1.0 s, TBT 210 ms |
+| `npm run test:e2e` | Passed — 30/30 tests, including gating, mobile viewport constraints, Visibility API checks, Axe accessibility, and split screenshots |
+| `npm run check:full` | Passed — 100% clean validation and E2E runs |
+| Lighthouse `/3d-lab` Static Mobile | Performance 77, Accessibility 98, Best Practices 96, SEO 69, LCP 3.7 s, TBT 525 ms |
+| Lighthouse `/3d-lab` Prod Mobile Fallback | Performance 77, Accessibility 98, Best Practices 96, SEO 69, LCP 3.5 s, TBT 549 ms |
+| Lighthouse `/3d-lab` Static Desktop | Performance 98, Accessibility 98, Best Practices 96, SEO 69, LCP 0.9 s, TBT 88 ms |
+| Lighthouse `/3d-lab` 3D Desktop (Tier A) | Performance 99, Accessibility 98, Best Practices 96, SEO 69, LCP 0.9 s, TBT 53 ms |
 
 
 Lighthouse reports:
@@ -260,10 +267,10 @@ These require account-side steps that cannot be automated from this repository:
 
 ### Step 14 — Production Homepage 3D Integration
 
-The isolated prototype at `/3d-lab` is verified, optimized, and tested. The next step is to integrate the 3D Neural Intelligence Core into the production homepage.
+The isolated prototype at `/3d-lab` and the dynamic gating wrapper are fully validated and verified. Step 14 is approved for implementation.
 
 Key Step 14 parameters:
-1. Ensure homepage keeps its semantic markup, content systems, SEO layout, and accessibility tags.
-2. The homepage 3D scene should be lazy-loaded using dynamic client components to maintain rapid Initial Server Paint.
-3. Apply same capability checks (device tiering, prefers-reduced-motion, WebGL availability) to ensure homepage displays the static fallback on unsupported devices.
+1. Integrate the 3D Neural Intelligence Core canvas into the production homepage background.
+2. Ensure homepage keeps its semantic markup, content systems, SEO layout, and accessibility tags.
+3. Use the verified `DynamicCanvasWrapper` to lazy-load the canvas, ensuring that mobile devices (Tier B) and reduced motion users (Tier C) continue to download **0 bytes** of the WebGL script payload.
 4. Keep CLS at 0, maintain zero horizontal overflow, and run full E2E test verification after integration.
