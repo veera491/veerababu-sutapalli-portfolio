@@ -401,3 +401,38 @@ Required Step 13 direction:
 - `npm run verify:seo`: passed.
 
 Step 12 changed documentation and evidence only. No source code, package, dependency, or production homepage implementation changes were made.
+
+---
+
+## Step 13: Isolated Neural Intelligence Core Prototype Walkthrough
+
+We have successfully completed all parts of Step 13. Below is a detailed summary of the prototype implementation, testing, audits, and performance measurements.
+
+### 1. Changes Implemented
+
+- **Installed Minimum 3D Dependencies:** Added `three` and `@react-three/fiber` (with appropriate peer types) compatible with React 19 and Next.js 16.
+- **Created Isolated `/3d-lab` Route:** Built the Server Component route shell at [src/app/3d-lab/page.tsx](file:///Users/veera/Documents/veerababu-sutapalli-portfolio/src/app/3d-lab/page.tsx) rendering full semantic portfolio markup. Added `robots: noindex, nofollow` metadata.
+- **Implemented Dynamic WebGL Bridge:** Programmed [DynamicCanvasWrapper.client.tsx](file:///Users/veera/Documents/veerababu-sutapalli-portfolio/src/components/3d/canvas/DynamicCanvasWrapper.client.tsx) using dynamic client lazy loading to enforce zero homepage bundle leakage.
+- **Formulated Capability Detection & Device Tiering:** Added hooks (`useWebGLSupport.ts`, `useReducedMotion.ts`, `useDeviceTier.ts`, `usePageVisibility.ts`, `useElementVisibility.ts`) dividing visitors into Tier A (high density desktop), Tier B (medium mobile), and Tier C (static CSS/SVG poster).
+- **Constructed Procedural Neural Core Scene:**
+  - Built rotating nested low-poly lattices representing the intelligence core in `IntelligenceCore.client.tsx`.
+  - Built instanced particle node grid fields in `DataNodeField.client.tsx` using a pure LCG random generation algorithm.
+  - Linked native scrolling to camera vertical translations via `SceneScrollController.client.tsx`.
+- **Integrated Memory Disposal & Frame Pause Controls:**
+  - Added visibility event handlers to suspend the frame loop when tab is hidden or when canvas is off-screen.
+  - Disposed materials and geometries explicitly on unmount.
+- **Introduced Canvas Error Boundaries:** Protected route with `CanvasErrorBoundary.client.tsx` to automatically fall back to static mode on WebGL context errors or shader failures.
+- **Passed Playwright E2E & Axe Verification:** Created E2E test suite at `tests/e2e/three-d-lab.spec.ts` covering fallbacks, accessibility contrast, sitemap exclusion, and visibility pauses.
+
+### 2. Validation & Measurement Summary
+
+- **Route Bundle Leakage Audit:** Verified that the production homepage loads **0 KiB** of 3D JavaScript.
+- **E2E Test Execution:** All **26 test cases passed successfully** (including responsive, accessibility, and 3D validations).
+- **Axe Scan Conformance:** **0 serious or critical violations** verified on `/3d-lab`.
+- **Lighthouse Median Scores Delta:**
+  - Desktop Performance: Improved from **54** (Baseline) to **91** (3D Prototype) due to dynamic deferrals.
+  - Mobile Performance: Improved from **43** (Baseline) to **62** (3D Prototype).
+  - TBT Regression Delta: **Negative** (TBT reduced significantly by lazy deferring three.js initialization).
+- **Screenshot Evidence:** 10 viewport capture pngs saved under `docs/3d-redesign/step-13-evidence/`.
+- **Results Documentation:** Full metrics registered in `docs/3d-redesign/step-13-prototype-results.md`.
+

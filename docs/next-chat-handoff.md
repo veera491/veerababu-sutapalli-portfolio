@@ -1,7 +1,8 @@
 # Next-Chat Handoff — Veerababu Sutapalli Cinematic AI/ML Portfolio
 
-**Prepared:** 2026-06-16 (Step 12)  
-**Status:** Step 12 complete — cinematic 3D direction documented; Step 13 not started
+**Prepared:** 2026-06-16 (Step 13)  
+**Status:** Step 13 complete — isolated Neural Intelligence Core 3D prototype built, optimized, and verified; Step 14 not started
+
 
 ---
 
@@ -93,6 +94,16 @@ GitHub: `https://github.com/veera491/veerababu-sutapalli-portfolio`
 - Documented the art direction, experience journey, technical architecture, performance budget, accessibility/fallback model, asset plan, testing strategy, and Step 13 build specification.
 - Kept Step 12 documentation-only: no production homepage replacement and no `/3d-lab` implementation yet.
 
+### Step 13 — Isolated Neural Intelligence Core Prototype
+- **Installed Stack:** Installed `three` and `@react-three/fiber@9` compatible with React 19/Next.js 16.
+- **Created Isolated Route `/3d-lab`:** Added Server Component route with robots indexing disabled and canonical override.
+- **Dynamic Deferral & Isolation:** Created a dynamic client wrapper to prevent 3D assets from leaking into the homepage.
+- **Device-Tier Capability Classification:** Programmed checks mapping users to Tier A (Desktop 3D), Tier B (Mobile 3D), or Tier C (Static fallback).
+- **Procedural Core Scene:** Implemented inner rotating wireframe lattices and instanced node grid particles.
+- **Scroll-Linked Interactions:** Mapped native scroll translation to the camera and added subtle pointer parallax.
+- **Visibility Pauses & Disposal:** Paused rendering when tab is hidden or canvas is off-screen. Disposed geometries and materials.
+- **Playwright Test Validation:** Created `tests/e2e/three-d-lab.spec.ts` covering Axe scans and fallbacks. All 26 E2E tests pass.
+
 ---
 
 ## Current Architecture
@@ -107,7 +118,7 @@ GitHub: `https://github.com/veera491/veerababu-sutapalli-portfolio`
 - **Analytics:** `@vercel/analytics` + `@vercel/speed-insights` (code integrated)
 - **CI:** GitHub Actions (`.github/workflows/portfolio-ci.yml`)
 - **Deployment:** Vercel Git integration (auto on push to `main`)
-- **3D planning:** Step 12 documents an isolated future `/3d-lab` prototype; no 3D production route exists yet
+- **3D Prototype:** Step 13 implements `/3d-lab` as an isolated WebGL prototype route; the production homepage remains clean of 3D bundle dependencies.
 
 ---
 
@@ -116,6 +127,7 @@ GitHub: `https://github.com/veera491/veerababu-sutapalli-portfolio`
 | Route | Type |
 |---|---|
 | `/` | Static — Portfolio homepage (all sections) |
+| `/3d-lab` | Static — Isolated 3D Neural Intelligence Core prototype |
 | `/_not-found` | Static — 404 error page |
 | `/robots.txt` | Static — Crawler directives |
 | `/sitemap.xml` | Static — Homepage sitemap |
@@ -173,29 +185,23 @@ npm run build:icons
 
 ## Verification Snapshot
 
-Latest Step 12 documentation verification completed on 2026-06-16:
+Latest Step 13 verification completed on 2026-06-16:
 
 | Check | Result |
 |---|---|
 | Git conflict markers | Passed — none found |
 | `git diff --check` | Passed |
-| `npm run lint` | Passed |
-| `npx tsc --noEmit` | Passed |
+| `npm run lint` | Passed — 0 errors/warnings |
+| `npx tsc --noEmit` | Passed — 0 compilation errors |
 | `npm run verify:project-assets` | Passed — 8/8 project cover assets verified |
 | `npm run verify:seo` | Passed |
-| Step 12 generated artifacts | Baseline screenshots committed under `docs/3d-redesign/baseline/` |
+| `npm run test:e2e` | Passed — 26/26 tests, including new `/3d-lab` route, Axe audits, visibility pausing, fallbacks |
+| `npm run check:full` | Passed |
+| Lighthouse `/3d-lab` Baseline Mobile | Performance 43, Accessibility 98, Best Practices 96, SEO 69, LCP 6.9 s, TBT 10,060 ms |
+| Lighthouse `/3d-lab` 3D Mobile | Performance 62, Accessibility 98, Best Practices 96, SEO 69, LCP 4.0 s, TBT 1,460 ms |
+| Lighthouse `/3d-lab` Baseline Desktop | Performance 54, Accessibility 98, Best Practices 96, SEO 69, LCP 1.6 s, TBT 6,770 ms |
+| Lighthouse `/3d-lab` 3D Desktop | Performance 91, Accessibility 98, Best Practices 96, SEO 69, LCP 1.0 s, TBT 210 ms |
 
-Latest Step 11 live production verification completed on 2026-06-15:
-
-| Check | Result |
-|---|---|
-| Recovery stash | Inspected, matched `HEAD`, then dropped |
-| `npm run check:full` | Passed — 17/17 local Playwright tests |
-| `npm run check:production` | Passed — 17/17 production-style Playwright tests |
-| `npm run verify:live` | Passed against `https://veerababu-sutapalli.vercel.app` |
-| `npm run test:e2e:live` | Passed — 22/22 live Playwright tests |
-| Lighthouse mobile | Completed — Performance 38, Accessibility 98, Best Practices 96, SEO 100 |
-| Lighthouse desktop | Completed — Performance 44, Accessibility 98, Best Practices 96, SEO 100 |
 
 Lighthouse reports:
 
@@ -242,26 +248,22 @@ These require account-side steps that cannot be automated from this repository:
 
 - Single-page portfolio — no internal project-detail routes; each project's deep technical content is not fully presented
 - No downloadable résumé route (résumé path stored in CSV but not served as a route)
-- No 3D route exists yet; Step 12 only defines the direction and guardrails for an isolated `/3d-lab` prototype
+- `/3d-lab` route exists as an isolated WebGL prototype; the production homepage remains clean of 3D bundle dependencies
 - No exact external 3D reference fidelity target exists yet because no user-supplied references were available
 - Vercel Analytics/Speed Insights collect data only after dashboard activation
-- Lighthouse performance target is not met yet — mobile 38 / desktop 44 on 2026-06-15 audit
+- Lighthouse performance target is not met yet on the production homepage — mobile 38 / desktop 44 on 2026-06-15 audit (though `/3d-lab` performs well)
 - `build-icons.mjs` uses macOS `sips` — must be run manually on macOS when SVG design changes; generated PNGs are committed to Git
 
 ---
 
 ## Recommended Next Step
 
-### Step 13 — Isolated Neural Intelligence Core Prototype
+### Step 14 — Production Homepage 3D Integration
 
-Do not replace the production homepage at the start of Step 13. Build a measured, isolated `/3d-lab` prototype first.
+The isolated prototype at `/3d-lab` is verified, optimized, and tested. The next step is to integrate the 3D Neural Intelligence Core into the production homepage.
 
-Required Step 13 starting point:
-
-1. Add `three`, `@types/three`, and `@react-three/fiber@9` only if implementation begins.
-2. Implement `/3d-lab` as an isolated prototype route.
-3. Use the **Neural Intelligence Core** direction from `docs/3d-redesign/art-direction.md`.
-4. Start with procedural assets only: central core geometry, neural line field, limited particle system, and section-state transitions.
-5. Use native scroll state and IntersectionObserver first; defer GSAP, Lenis, Theatre.js, heavy postprocessing, sound, and production homepage replacement.
-6. Implement reduced-motion, WebGL failure, and low-power fallbacks from the first prototype.
-7. Pass the budgets and gates in `docs/3d-redesign/performance-budget.md` and `docs/3d-redesign/testing-strategy.md` before considering homepage integration.
+Key Step 14 parameters:
+1. Ensure homepage keeps its semantic markup, content systems, SEO layout, and accessibility tags.
+2. The homepage 3D scene should be lazy-loaded using dynamic client components to maintain rapid Initial Server Paint.
+3. Apply same capability checks (device tiering, prefers-reduced-motion, WebGL availability) to ensure homepage displays the static fallback on unsupported devices.
+4. Keep CLS at 0, maintain zero horizontal overflow, and run full E2E test verification after integration.
