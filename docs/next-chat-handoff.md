@@ -1,7 +1,7 @@
 # Next-Chat Handoff — Veerababu Sutapalli Cinematic AI/ML Portfolio
 
 **Prepared:** 2026-06-15 (Step 11)  
-**Status:** Step 11 complete — production deployed and verified
+**Status:** Step 11 complete — production deployed, verified, and Lighthouse-audited
 
 ---
 
@@ -77,6 +77,8 @@ GitHub: `https://github.com/veera491/veerababu-sutapalli-portfolio`
 - `scripts/verify-live-production.mjs` — live HTTP verifier
 - `tests/e2e/live-production.spec.ts` — live Playwright suite (30 acceptance criteria)
 - `playwright.live.config.ts` — live test config (no local server)
+- Live Playwright hardening for long-running Axe scans and precise mobile-dialog assertions
+- Lighthouse mobile and desktop reports in `docs/lighthouse/`
 - `scripts/build-icons.mjs` — documented as macOS-only manual utility (Outcome B)
 - `README.md` — production section
 - `docs/production-deployment-audit.md` — full audit document
@@ -127,6 +129,8 @@ npm run check:production
 npm run verify:live
 npm run test:e2e:live
 
+# Lighthouse reports are committed in docs/lighthouse/
+
 # Individual tools
 npm run verify:project-assets
 npm run verify:seo
@@ -148,8 +152,36 @@ npm run build:icons
 | Branch | `main` |
 | Remote | `https://github.com/veera491/veerababu-sutapalli-portfolio.git` |
 | Connected Vercel branch | `main` |
-| Latest commit SHA | `1ed3ef41d870b7eeaac329f72e8831304489685a` |
-| Pushed | Yes — pushed to `origin/main` |
+| Primary production feature SHA | `1ed3ef41d870b7eeaac329f72e8831304489685a` |
+| Documentation recovery SHA | `b915f1005816042eedfa0054f15c21f55268fe23` |
+| Latest final SHA | Use `git rev-parse HEAD` after pulling `origin/main` |
+| Pushed | Yes — normal pushes to `origin/main`; no force-push or amend |
+
+---
+
+## Verification Snapshot
+
+Latest verification completed on 2026-06-15:
+
+| Check | Result |
+|---|---|
+| Git conflict markers / unmerged files | Passed — none found |
+| Recovery stash | Inspected, matched `HEAD`, then dropped |
+| `npm run check:full` | Passed — 17/17 local Playwright tests |
+| `npm run check:production` | Passed — 17/17 production-style Playwright tests |
+| `npm run verify:live` | Passed against `https://veerababu-sutapalli.vercel.app` |
+| `npm run test:e2e:live` | Passed — 22/22 live Playwright tests |
+| Lighthouse mobile | Completed — Performance 38, Accessibility 98, Best Practices 96, SEO 100 |
+| Lighthouse desktop | Completed — Performance 44, Accessibility 98, Best Practices 96, SEO 100 |
+
+Lighthouse reports:
+
+- `docs/lighthouse/production-lighthouse.report.html`
+- `docs/lighthouse/production-lighthouse.report.json`
+- `docs/lighthouse/production-lighthouse-desktop.report.html`
+- `docs/lighthouse/production-lighthouse-desktop.report.json`
+
+Performance note: Lighthouse performance is below the aspirational target because of high reported main-thread work/TBT. Server response, CLS, accessibility, best-practices, and SEO are healthy. Treat performance optimization as a dedicated follow-up before making Lighthouse a blocking CI gate.
 
 ---
 
@@ -176,8 +208,9 @@ These require account-side steps that cannot be automated from this repository:
 3. **Google Search Console** — create URL-prefix property for `https://veerababu-sutapalli.vercel.app`, verify with HTML meta tag, set `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` in Vercel, submit sitemap
 4. **Bing Webmaster Tools** — create property, verify with `msvalidate.01` meta tag, set `NEXT_PUBLIC_BING_SITE_VERIFICATION` in Vercel
 5. **Sitemap submission:** `https://veerababu-sutapalli.vercel.app/sitemap.xml`
-6. **Lighthouse CI** — not yet integrated as blocking CI step
-7. **Content Security Policy** — deferred; requires auditing all inline scripts, analytics endpoints, font CDNs, and JSON-LD before adding a strict policy
+6. **Lighthouse performance remediation** — mobile 38 / desktop 44 performance scores need optimization before CI gating
+7. **Lighthouse CI** — not yet integrated as blocking CI step
+8. **Content Security Policy** — deferred; requires auditing all inline scripts, analytics endpoints, font CDNs, and JSON-LD before adding a strict policy
 
 ---
 
@@ -186,7 +219,7 @@ These require account-side steps that cannot be automated from this repository:
 - Single-page portfolio — no internal project-detail routes; each project's deep technical content is not fully presented
 - No downloadable résumé route (résumé path stored in CSV but not served as a route)
 - Vercel Analytics/Speed Insights collect data only after dashboard activation
-- Lighthouse audit targets are aspirational — actual scores depend on network conditions and Vercel cold-start behavior
+- Lighthouse performance target is not met yet — mobile 38 / desktop 44 on 2026-06-15 audit
 - `build-icons.mjs` uses macOS `sips` — must be run manually on macOS when SVG design changes; generated PNGs are committed to Git
 
 ---

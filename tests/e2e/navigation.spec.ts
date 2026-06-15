@@ -96,6 +96,8 @@ test.describe('Navigation and Accessibility verification', () => {
   });
 
   test('Axe Accessibility Scans', async ({ page }) => {
+    test.setTimeout(120000);
+
     // Desktop Home Axe Scan
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/');

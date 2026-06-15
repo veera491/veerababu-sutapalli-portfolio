@@ -104,6 +104,8 @@ Script: `npm run test:e2e:live`
 
 Coverage: 30 acceptance criteria including HTTP 200, HTTPS, canonical, og:url, og:image, Twitter meta, H1, JSON-LD, no leakage, robots, sitemap, 404, favicon, Apple touch icon, no failed assets, Axe a11y, mobile overflow, mobile nav, security headers.
 
+Latest result on 2026-06-15: **PASS** — 22/22 Playwright tests passed against `https://veerababu-sutapalli.vercel.app`.
+
 ---
 
 ## Live Endpoint Verifier
@@ -112,19 +114,55 @@ Script: `scripts/verify-live-production.mjs`
 Command: `npm run verify:live`
 Checks: homepage, HTTPS, canonical, og:url, og:image, robots, sitemap, brand assets, security headers.
 
+Latest result on 2026-06-15 at `2026-06-15T19:04:22.969Z`: **PASS**.
+
 ---
 
 ## Lighthouse Results
 
-> **Status:** Pending — Lighthouse audit will be run after the first successful Vercel deployment.
->
-> Minimum targets:
-> | Category | Target |
-> |---|---|
-> | Performance | ≥ 85 |
-> | Accessibility | ≥ 95 |
-> | Best Practices | ≥ 90 |
-> | SEO | ≥ 95 |
+Lighthouse was run against the production URL on 2026-06-15 with Lighthouse `13.4.0` and installed Chrome. Reports are committed under `docs/lighthouse/`.
+
+| Report | Performance | Accessibility | Best Practices | SEO | Agentic Browsing |
+|---|---:|---:|---:|---:|---:|
+| Mobile default — `docs/lighthouse/production-lighthouse.report.html` / `.json` | 38 | 98 | 96 | 100 | 100 |
+| Desktop preset — `docs/lighthouse/production-lighthouse-desktop.report.html` / `.json` | 44 | 98 | 96 | 100 | 100 |
+
+Key mobile metrics:
+
+| Metric | Value |
+|---|---:|
+| First Contentful Paint | 4.1 s |
+| Largest Contentful Paint | 4.5 s |
+| Speed Index | 9.5 s |
+| Total Blocking Time | 13,050 ms |
+| Cumulative Layout Shift | 0 |
+| Time to Interactive | 19.5 s |
+| Initial server response | 90 ms |
+| Total byte weight | 475 KiB |
+
+Key desktop metrics:
+
+| Metric | Value |
+|---|---:|
+| First Contentful Paint | 1.0 s |
+| Largest Contentful Paint | 2.6 s |
+| Speed Index | 6.5 s |
+| Total Blocking Time | 4,350 ms |
+| Cumulative Layout Shift | 0 |
+| Time to Interactive | 6.7 s |
+| Initial server response | 90 ms |
+| Total byte weight | 671 KiB |
+
+Target status:
+
+| Category | Target | Mobile | Desktop | Status |
+|---|---:|---:|---:|---|
+| Performance | ≥ 85 | 38 | 44 | Missed — follow-up optimization required |
+| Accessibility | ≥ 95 | 98 | 98 | Passed |
+| Best Practices | ≥ 90 | 96 | 96 | Passed |
+| SEO | ≥ 95 | 100 | 100 | Passed |
+
+Performance notes: server response and payload size are healthy, while Lighthouse reports high main-thread work and Total Blocking Time. This should be treated as a dedicated performance-hardening follow-up before adding Lighthouse as a blocking CI gate.
 
 ---
 
@@ -166,7 +204,13 @@ Committed assets:
 
 ## Deployment Commit SHA
 
+Primary production feature commit:
+
 `1ed3ef41d870b7eeaac329f72e8831304489685a`
+
+Documentation recovery commit:
+
+`b915f1005816042eedfa0054f15c21f55268fe23`
 
 Pushed to `origin/main` on 2026-06-15.
 
@@ -178,8 +222,9 @@ Pushed to `origin/main` on 2026-06-15.
 2. **Vercel Speed Insights dashboard** — Owner must enable Speed Insights in project settings
 3. **Google Search Console** — Owner must create URL-prefix property and complete HTML tag verification
 4. **Bing Webmaster Tools** — Owner must create property and complete meta tag verification
-5. **Lighthouse CI** — Not yet integrated as a blocking CI step; can be added as Step 12 work
-6. **CSP** — Deferred; requires auditing all inline scripts, Vercel Analytics, Speed Insights, Google Fonts, and JSON-LD before adding a strict policy
+5. **Lighthouse performance remediation** — Performance score is below target; optimize main-thread work/TBT before making Lighthouse blocking
+6. **Lighthouse CI** — Not yet integrated as a blocking CI step; defer until performance baseline is stable
+7. **CSP** — Deferred; requires auditing all inline scripts, Vercel Analytics, Speed Insights, Google Fonts, and JSON-LD before adding a strict policy
 
 ---
 
@@ -196,12 +241,12 @@ Pushed to `origin/main` on 2026-06-15.
 | Speed Insights integration | ✅ (code) |
 | Security headers | ✅ |
 | GitHub Actions CI | ✅ |
-| Changes committed | ✅ (pending push) |
-| Changes pushed | Pending |
-| Vercel deploys | Pending |
-| Live homepage 200 | Pending live verification |
-| Live canonical correct | Pending live verification |
-| Live robots correct | Pending live verification |
-| Live sitemap correct | Pending live verification |
-| Live Playwright tests | Pending live verification |
-| Lighthouse audit | Pending |
+| Changes committed | ✅ Normal commits only |
+| Changes pushed | ✅ Pushed normally to `origin/main` |
+| Vercel deploys | ✅ Production URL verified |
+| Live homepage 200 | ✅ |
+| Live canonical correct | ✅ |
+| Live robots correct | ✅ |
+| Live sitemap correct | ✅ |
+| Live Playwright tests | ✅ 22/22 passed |
+| Lighthouse audit | ✅ Completed and documented; performance follow-up required |

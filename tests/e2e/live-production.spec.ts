@@ -190,6 +190,8 @@ test.describe('Live Production — Assets and Icons', () => {
 
 test.describe('Live Production — Accessibility', () => {
   test('No serious or critical Axe issues on live homepage', async ({ page }) => {
+    test.setTimeout(180000);
+
     await page.goto('/');
     await page.waitForLoadState('networkidle');
     const results = await new AxeBuilder({ page })
@@ -225,12 +227,12 @@ test.describe('Live Production — Responsive', () => {
     });
     const page = await context.newPage();
     await page.goto('/');
-    const menuButton = page.locator('[aria-label*="menu" i], [aria-label*="navigation" i], button[aria-expanded]').first();
-    if (await menuButton.count() > 0) {
-      await menuButton.click();
-      // Nav should be visible after toggle
-      await expect(page.locator('nav, [role="dialog"], [role="navigation"]').first()).toBeVisible();
-    }
+    const menuButton = page.locator('button[aria-label*="menu" i]').first();
+    await expect(menuButton).toBeVisible();
+    await expect(menuButton).toHaveAttribute('aria-expanded', 'false');
+    await menuButton.click();
+    await expect(menuButton).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.locator('div[role="dialog"]')).toBeVisible();
     await context.close();
   });
 });
